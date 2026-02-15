@@ -167,7 +167,7 @@ with st.sidebar:
                     # Initialize planner
                     st.session_state.planner = CoursePlanner(
                         st.session_state.loader,
-                        'gpt-4o-mini'
+                        'gpt-4.1-mini'
                     )
                     
                     # Clear previous plans
