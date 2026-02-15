@@ -1,0 +1,22 @@
+Recommended Implementation Order
+Phase 1 (MVP):
+
+Failed course urgency - not now
+Mandatory course priority - done
+Prerequisite unlocking - done
+Workload balance - done
+Final semester constraints - done
+
+Phase 2 (Enhancement):
+
+Difficulty balance - x
+Course offering frequency - x
+Category distribution - x
+Student preferences 
+Year-appropriate selection - done as hard constraint
+
+
+
+llm weights / reasons
+multiple choices
+explanations

@@ -1,0 +1,471 @@
+{
+  "student_id": "21BCE0042",
+  "name": "Priya Sharma",
+  "email": "priya.sharma2021@vitstudent.ac.in",
+  "program": "B.Tech Computer Science and Engineering",
+  
+  "current_year": 3,
+  "current_semester": 6,
+  "cgpa": 9.12,
+  
+  "completed_courses": [
+    "BCHY101L",
+    "BCHY101P",
+    "BCSE101E",
+    "BCSE102L",
+    "BCSE102P",
+    "BEEE102L",
+    "BEEE102P",
+    "BENG101L",
+    "BENG101P",
+    "BFLE200L",
+    "BMAT101L",
+    "BMAT101P",
+    "BPHY101L",
+    "BPHY101P",
+    "BSTS101P",
+    "BCSE103E",
+    "BENG102P",
+    "BMAT102L",
+    "BSTS102P",
+    "BECE102L",
+    "BECE102P",
+    "BHSM200L",
+    "BMAT201L",
+    "BCSE202L",
+    "BCSE202P",
+    "BCSE203E",
+    "BMAT202L",
+    "BMAT202P",
+    "BSTS201P",
+    "BECE204L",
+    "BECE204P",
+    "BMAT205L",
+    "BCSE204L",
+    "BCSE204P",
+    "BCSE205L",
+    "BSTS202P",
+    "BCSE206L",
+    "BCSE207L",
+    "BCSE207P",
+    "BCSE301L",
+    "BCSE301P",
+    "BCSE302L",
+    "BCSE302P",
+    "BCSE304L",
+    "BCSE305L",
+    "BCSE306L",
+    "BCSE101N",
+    "BSSC102N"
+  ],
+  
+  "failed_courses": [],
+  
+  "course_records": [
+    {
+      "course_code": "BCHY101L",
+      "course_name": "Engineering Chemistry",
+      "credits": 3,
+      "grade": "A+",
+      "semester_taken": 1,
+      "is_failed": false
+    },
+    {
+      "course_code": "BCHY101P",
+      "course_name": "Engineering Chemistry Lab",
+      "credits": 1,
+      "grade": "S",
+      "semester_taken": 1,
+      "is_failed": false
+    },
+    {
+      "course_code": "BCSE101E",
+      "course_name": "Computer Programming: Python",
+      "credits": 3,
+      "grade": "S",
+      "semester_taken": 1,
+      "is_failed": false
+    },
+    {
+      "course_code": "BCSE102L",
+      "course_name": "Structured and Object-Oriented Programming",
+      "credits": 2,
+      "grade": "A+",
+      "semester_taken": 1,
+      "is_failed": false
+    },
+    {
+      "course_code": "BCSE102P",
+      "course_name": "Structured and Object-Oriented Programming Lab",
+      "credits": 2,
+      "grade": "S",
+      "semester_taken": 1,
+      "is_failed": false
+    },
+    {
+      "course_code": "BEEE102L",
+      "course_name": "Basic Electrical and Electronics Engineering",
+      "credits": 3,
+      "grade": "A",
+      "semester_taken": 1,
+      "is_failed": false
+    },
+    {
+      "course_code": "BEEE102P",
+      "course_name": "Basic Electrical and Electronics Engineering Lab",
+      "credits": 1,
+      "grade": "A+",
+      "semester_taken": 1,
+      "is_failed": false
+    },
+    {
+      "course_code": "BENG101L",
+      "course_name": "Technical English Communication",
+      "credits": 2,
+      "grade": "A+",
+      "semester_taken": 1,
+      "is_failed": false
+    },
+    {
+      "course_code": "BENG101P",
+      "course_name": "Technical English Communication Lab",
+      "credits": 1,
+      "grade": "S",
+      "semester_taken": 1,
+      "is_failed": false
+    },
+    {
+      "course_code": "BFLE200L",
+      "course_name": "B.Tech. Foreign Language - 2021 onwards",
+      "credits": 2,
+      "grade": "A",
+      "semester_taken": 1,
+      "is_failed": false
+    },
+    {
+      "course_code": "BMAT101L",
+      "course_name": "Calculus",
+      "credits": 3,
+      "grade": "A+",
+      "semester_taken": 1,
+      "is_failed": false
+    },
+    {
+      "course_code": "BMAT101P",
+      "course_name": "Calculus Lab",
+      "credits": 1,
+      "grade": "S",
+      "semester_taken": 1,
+      "is_failed": false
+    },
+    {
+      "course_code": "BPHY101L",
+      "course_name": "Engineering Physics",
+      "credits": 3,
+      "grade": "A",
+      "semester_taken": 1,
+      "is_failed": false
+    },
+    {
+      "course_code": "BPHY101P",
+      "course_name": "Engineering Physics Lab",
+      "credits": 1,
+      "grade": "A+",
+      "semester_taken": 1,
+      "is_failed": false
+    },
+    {
+      "course_code": "BSTS101P",
+      "course_name": "Quantitative Skills Practice I",
+      "credits": 1,
+      "grade": "S",
+      "semester_taken": 1,
+      "is_failed": false
+    },
+    {
+      "course_code": "BCSE103E",
+      "course_name": "Computer Programming: Java",
+      "credits": 3,
+      "grade": "S",
+      "semester_taken": 2,
+      "is_failed": false
+    },
+    {
+      "course_code": "BENG102P",
+      "course_name": "Technical Report Writing",
+      "credits": 1,
+      "grade": "A+",
+      "semester_taken": 2,
+      "is_failed": false
+    },
+    {
+      "course_code": "BMAT102L",
+      "course_name": "Differential Equations and Transforms",
+      "credits": 4,
+      "grade": "A",
+      "semester_taken": 2,
+      "is_failed": false
+    },
+    {
+      "course_code": "BSTS102P",
+      "course_name": "Quantitative Skills Practice II",
+      "credits": 1,
+      "grade": "S",
+      "semester_taken": 2,
+      "is_failed": false
+    },
+    {
+      "course_code": "BECE102L",
+      "course_name": "Digital Systems Design",
+      "credits": 3,
+      "grade": "A",
+      "semester_taken": 2,
+      "is_failed": false
+    },
+    {
+      "course_code": "BECE102P",
+      "course_name": "Digital Systems Design Lab",
+      "credits": 1,
+      "grade": "A+",
+      "semester_taken": 2,
+      "is_failed": false
+    },
+    {
+      "course_code": "BHSM200L",
+      "course_name": "B.Tech. HSM Elective - 2021 onwards",
+      "credits": 3,
+      "grade": "A+",
+      "semester_taken": 2,
+      "is_failed": false
+    },
+    {
+      "course_code": "BMAT201L",
+      "course_name": "Complex Variables and Linear Algebra",
+      "credits": 4,
+      "grade": "A+",
+      "semester_taken": 3,
+      "is_failed": false
+    },
+    {
+      "course_code": "BCSE202L",
+      "course_name": "Data Structures and Algorithms",
+      "credits": 3,
+      "grade": "S",
+      "semester_taken": 3,
+      "is_failed": false
+    },
+    {
+      "course_code": "BCSE202P",
+      "course_name": "Data Structures and Algorithms Lab",
+      "credits": 1,
+      "grade": "S",
+      "semester_taken": 3,
+      "is_failed": false
+    },
+    {
+      "course_code": "BCSE203E",
+      "course_name": "Web Programming",
+      "credits": 3,
+      "grade": "A+",
+      "semester_taken": 3,
+      "is_failed": false
+    },
+    {
+      "course_code": "BMAT202L",
+      "course_name": "Probability and Statistics",
+      "credits": 3,
+      "grade": "A+",
+      "semester_taken": 3,
+      "is_failed": false
+    },
+    {
+      "course_code": "BMAT202P",
+      "course_name": "Probability and Statistics Lab",
+      "credits": 1,
+      "grade": "S",
+      "semester_taken": 3,
+      "is_failed": false
+    },
+    {
+      "course_code": "BSTS201P",
+      "course_name": "Qualitative Skills Practice I",
+      "credits": 1,
+      "grade": "S",
+      "semester_taken": 3,
+      "is_failed": false
+    },
+    {
+      "course_code": "BECE204L",
+      "course_name": "Microprocessors and Microcontrollers",
+      "credits": 3,
+      "grade": "A",
+      "semester_taken": 4,
+      "is_failed": false
+    },
+    {
+      "course_code": "BECE204P",
+      "course_name": "Microprocessors and Microcontrollers Lab",
+      "credits": 1,
+      "grade": "A+",
+      "semester_taken": 4,
+      "is_failed": false
+    },
+    {
+      "course_code": "BMAT205L",
+      "course_name": "Discrete Mathematics and Graph Theory",
+      "credits": 4,
+      "grade": "A",
+      "semester_taken": 4,
+      "is_failed": false
+    },
+    {
+      "course_code": "BCSE204L",
+      "course_name": "Design and Analysis of Algorithms",
+      "credits": 3,
+      "grade": "S",
+      "semester_taken": 4,
+      "is_failed": false
+    },
+    {
+      "course_code": "BCSE204P",
+      "course_name": "Design and Analysis of Algorithms Lab",
+      "credits": 1,
+      "grade": "S",
+      "semester_taken": 4,
+      "is_failed": false
+    },
+    {
+      "course_code": "BCSE205L",
+      "course_name": "Computer Architecture and Organization",
+      "credits": 3,
+      "grade": "A+",
+      "semester_taken": 4,
+      "is_failed": false
+    },
+    {
+      "course_code": "BSTS202P",
+      "course_name": "Qualitative Skills Practice II",
+      "credits": 1,
+      "grade": "S",
+      "semester_taken": 4,
+      "is_failed": false
+    },
+    {
+      "course_code": "BCSE206L",
+      "course_name": "Foundations of Data Science",
+      "credits": 3,
+      "grade": "A+",
+      "semester_taken": 4,
+      "is_failed": false
+    },
+    {
+      "course_code": "BCSE207L",
+      "course_name": "Programming for Data Science",
+      "credits": 2,
+      "grade": "A",
+      "semester_taken": 4,
+      "is_failed": false
+    },
+    {
+      "course_code": "BCSE207P",
+      "course_name": "Programming for Data Science Lab",
+      "credits": 1,
+      "grade": "A+",
+      "semester_taken": 4,
+      "is_failed": false
+    },
+    {
+      "course_code": "BCSE301L",
+      "course_name": "Software Engineering",
+      "credits": 3,
+      "grade": "A",
+      "semester_taken": 5,
+      "is_failed": false
+    },
+    {
+      "course_code": "BCSE301P",
+      "course_name": "Software Engineering Lab",
+      "credits": 1,
+      "grade": "A+",
+      "semester_taken": 5,
+      "is_failed": false
+    },
+    {
+      "course_code": "BCSE302L",
+      "course_name": "Database Systems",
+      "credits": 3,
+      "grade": "A+",
+      "semester_taken": 5,
+      "is_failed": false
+    },
+    {
+      "course_code": "BCSE302P",
+      "course_name": "Database Systems Lab",
+      "credits": 1,
+      "grade": "S",
+      "semester_taken": 5,
+      "is_failed": false
+    },
+    {
+      "course_code": "BCSE304L",
+      "course_name": "Theory of Computation",
+      "credits": 3,
+      "grade": "A",
+      "semester_taken": 5,
+      "is_failed": false
+    },
+    {
+      "course_code": "BCSE305L",
+      "course_name": "Embedded Systems",
+      "credits": 3,
+      "grade": "A",
+      "semester_taken": 5,
+      "is_failed": false
+    },
+    {
+      "course_code": "BCSE306L",
+      "course_name": "Artificial Intelligence",
+      "credits": 3,
+      "grade": "A+",
+      "semester_taken": 5,
+      "is_failed": false
+    },
+    {
+      "course_code": "BCSE101N",
+      "course_name": "Introduction to Engineering",
+      "credits": 1,
+      "grade": "P",
+      "semester_taken": 5,
+      "is_failed": false
+    },
+    {
+      "course_code": "BSSC102N",
+      "course_name": "Indian Constitution",
+      "credits": 2,
+      "grade": "P",
+      "semester_taken": 5,
+      "is_failed": false
+    }
+  ],
+  
+  "interest_areas": [
+    "Machine Learning",
+    "Deep Learning",
+    "Natural Language Processing",
+    "Computer Vision"
+  ],
+  
+  "preferred_credits_per_semester": 22,
+  "max_credits_per_semester": 26,
+  "preferred_difficulty_level": "high",
+  
+  "has_backlogs": false,
+  "avoid_courses": [],
+  
+  "past_performance_trend": "consistently_high",
+  
+  "risk_tolerance": "high",
+  "workload_preference": "high",
+  "prioritize_gpa": true,
+  "prioritize_learning": true
+}

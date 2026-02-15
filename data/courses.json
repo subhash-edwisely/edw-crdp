@@ -1,0 +1,3442 @@
+{
+  "metadata": {
+    "institution": "Vellore Institute of Technology",
+    "program": "B.Tech Computer Science and Engineering",
+    "academic_year": "2024-2025",
+    "total_credits_required": 162,
+    "generated_date": "2025-02-14",
+    "source": "B_Tech_CSE_2024_2025_compressed.pdf"
+  },
+  "credit_requirements": {
+    "Foundation Core": {
+      "required": 51,
+      "max": 51
+    },
+    "Discipline-linked Engineering Sciences": {
+      "required": 12,
+      "max": 12
+    },
+    "Discipline Core": {
+      "required": 47,
+      "max": 47
+    },
+    "Discipline Elective": {
+      "required": 9,
+      "max": 15
+    },
+    "Projects and Internship": {
+      "required": 9,
+      "max": 9
+    },
+    "Open Elective": {
+      "required": 0,
+      "max": 15
+    },
+    "Bridge Course": {
+      "required": 0,
+      "max": 0
+    },
+    "Non-graded Core Requirement": {
+      "required": 11,
+      "max": 11
+    },
+    "Multidisciplinary Elective": {
+      "required": 0,
+      "max": 21
+    },
+    "Combined Elective": {
+      "description": "DE + OE + ME",
+      "required": 0,
+      "max": 30
+    }
+  },
+  "courses": [
+    {
+      "id": 1,
+      "course_code": "BCHY101L",
+      "course_name": "Engineering Chemistry",
+      "credits": 3,
+      "course_type": "Foundation Core",
+      "is_mandatory": true,
+      "prerequisites": [],
+      "unlocks": [],
+      "has_lab": true,
+      "lab_course_code": "BCHY101P",
+      "lab_credits": 1,
+      "year_offered": 1,
+      "difficulty": 45,
+      "pass_rate": 0.85,
+      "L": 3,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "A1",
+        "B1",
+        "C1",
+        "D1"
+      ]
+    },
+    {
+      "id": 2,
+      "course_code": "BCHY101P",
+      "course_name": "Engineering Chemistry Lab",
+      "credits": 1,
+      "course_type": "Foundation Core",
+      "is_mandatory": true,
+      "prerequisites": [],
+      "unlocks": [],
+      "has_lab": false,
+      "is_lab": true,
+      "theory_course_code": "BCHY101L",
+      "year_offered": 1,
+      "difficulty": 30,
+      "pass_rate": 0.9,
+      "L": 0,
+      "T": 0,
+      "P": 2,
+      "J": 0,
+      "slots": [
+        "L1",
+        "L2",
+        "L3",
+        "L4"
+      ]
+    },
+    {
+      "id": 3,
+      "course_code": "BCSE101E",
+      "course_name": "Computer Programming: Python",
+      "credits": 3,
+      "course_type": "Foundation Core",
+      "is_mandatory": true,
+      "prerequisites": [],
+      "unlocks": [],
+      "has_lab": false,
+      "embedded_lab": true,
+      "year_offered": 1,
+      "difficulty": 50,
+      "pass_rate": 0.88,
+      "L": 1,
+      "T": 0,
+      "P": 4,
+      "J": 0,
+      "slots": [
+        "A2",
+        "B2",
+        "C2",
+        "D2",
+        "E1"
+      ]
+    },
+    {
+      "id": 4,
+      "course_code": "BCSE102L",
+      "course_name": "Structured and Object-Oriented Programming",
+      "credits": 2,
+      "course_type": "Foundation Core",
+      "is_mandatory": true,
+      "prerequisites": [
+        "BCSE101E"
+      ],
+      "unlocks": [],
+      "has_lab": true,
+      "lab_course_code": "BCSE102P",
+      "lab_credits": 2,
+      "year_offered": 1,
+      "difficulty": 55,
+      "pass_rate": 0.82,
+      "L": 2,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "A1",
+        "B1",
+        "C1",
+        "D1",
+        "E1"
+      ]
+    },
+    {
+      "id": 5,
+      "course_code": "BCSE102P",
+      "course_name": "Structured and Object-Oriented Programming Lab",
+      "credits": 2,
+      "course_type": "Foundation Core",
+      "is_mandatory": true,
+      "prerequisites": [],
+      "unlocks": [],
+      "has_lab": false,
+      "is_lab": true,
+      "theory_course_code": "BCSE102L",
+      "year_offered": 1,
+      "difficulty": 50,
+      "pass_rate": 0.85,
+      "L": 0,
+      "T": 0,
+      "P": 4,
+      "J": 0,
+      "slots": [
+        "L5",
+        "L6",
+        "L7",
+        "L8"
+      ]
+    },
+    {
+      "id": 6,
+      "course_code": "BCSE103E",
+      "course_name": "Computer Programming: Java",
+      "credits": 3,
+      "course_type": "Foundation Core",
+      "is_mandatory": true,
+      "prerequisites": [
+        "BCSE102L"
+      ],
+      "unlocks": [],
+      "has_lab": false,
+      "embedded_lab": true,
+      "year_offered": 1,
+      "difficulty": 58,
+      "pass_rate": 0.8,
+      "L": 1,
+      "T": 0,
+      "P": 4,
+      "J": 0,
+      "slots": [
+        "F1",
+        "F2",
+        "G1",
+        "G2"
+      ]
+    },
+    {
+      "id": 7,
+      "course_code": "BEEE102L",
+      "course_name": "Basic Electrical and Electronics Engineering",
+      "credits": 3,
+      "course_type": "Foundation Core",
+      "is_mandatory": true,
+      "prerequisites": [],
+      "unlocks": [],
+      "has_lab": true,
+      "lab_course_code": "BEEE102P",
+      "lab_credits": 1,
+      "year_offered": 1,
+      "difficulty": 52,
+      "pass_rate": 0.83,
+      "L": 3,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "A2",
+        "B2",
+        "C2",
+        "D2"
+      ]
+    },
+    {
+      "id": 8,
+      "course_code": "BEEE102P",
+      "course_name": "Basic Electrical and Electronics Engineering Lab",
+      "credits": 1,
+      "course_type": "Foundation Core",
+      "is_mandatory": true,
+      "prerequisites": [],
+      "unlocks": [],
+      "has_lab": false,
+      "is_lab": true,
+      "theory_course_code": "BEEE102L",
+      "year_offered": 1,
+      "difficulty": 35,
+      "pass_rate": 0.92,
+      "L": 0,
+      "T": 0,
+      "P": 2,
+      "J": 0,
+      "slots": [
+        "L9",
+        "L10",
+        "L11",
+        "L12"
+      ]
+    },
+    {
+      "id": 9,
+      "course_code": "BENG101L",
+      "course_name": "Technical English Communication",
+      "credits": 2,
+      "course_type": "Foundation Core",
+      "is_mandatory": true,
+      "prerequisites": [],
+      "unlocks": [],
+      "has_lab": true,
+      "lab_course_code": "BENG101P",
+      "lab_credits": 1,
+      "year_offered": 1,
+      "difficulty": 40,
+      "pass_rate": 0.9,
+      "L": 2,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "E1",
+        "E2",
+        "F1",
+        "F2"
+      ]
+    },
+    {
+      "id": 10,
+      "course_code": "BENG101P",
+      "course_name": "Technical English Communication Lab",
+      "credits": 1,
+      "course_type": "Foundation Core",
+      "is_mandatory": true,
+      "prerequisites": [],
+      "unlocks": [],
+      "has_lab": false,
+      "is_lab": true,
+      "theory_course_code": "BENG101L",
+      "year_offered": 1,
+      "difficulty": 35,
+      "pass_rate": 0.93,
+      "L": 0,
+      "T": 0,
+      "P": 2,
+      "J": 0,
+      "slots": [
+        "L13",
+        "L14",
+        "L15",
+        "L16"
+      ]
+    },
+    {
+      "id": 11,
+      "course_code": "BENG102P",
+      "course_name": "Technical Report Writing",
+      "credits": 1,
+      "course_type": "Foundation Core",
+      "is_mandatory": true,
+      "prerequisites": [
+        "BENG101L"
+      ],
+      "unlocks": [],
+      "has_lab": false,
+      "is_lab": true,
+      "year_offered": 1,
+      "difficulty": 38,
+      "pass_rate": 0.91,
+      "L": 0,
+      "T": 0,
+      "P": 2,
+      "J": 0,
+      "slots": [
+        "L17",
+        "L18",
+        "L19",
+        "L20"
+      ]
+    },
+    {
+      "id": 12,
+      "course_code": "BFLE200L",
+      "course_name": "B.Tech. Foreign Language - 2021 onwards",
+      "credits": 2,
+      "course_type": "Foundation Core",
+      "is_mandatory": true,
+      "prerequisites": [],
+      "unlocks": [],
+      "has_lab": false,
+      "basket": true,
+      "year_offered": 1,
+      "difficulty": 42,
+      "pass_rate": 0.87,
+      "L": 0,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "G1",
+        "G2",
+        "A1",
+        "B1"
+      ]
+    },
+    {
+      "id": 13,
+      "course_code": "BHSM200L",
+      "course_name": "B.Tech. HSM Elective - 2021 onwards",
+      "credits": 3,
+      "course_type": "Foundation Core",
+      "is_mandatory": true,
+      "prerequisites": [],
+      "unlocks": [],
+      "has_lab": false,
+      "basket": true,
+      "year_offered": 1,
+      "difficulty": 45,
+      "pass_rate": 0.88,
+      "L": 0,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "C1",
+        "C2",
+        "D1",
+        "D2"
+      ]
+    },
+    {
+      "id": 14,
+      "course_code": "BMAT101L",
+      "course_name": "Calculus",
+      "credits": 3,
+      "course_type": "Foundation Core",
+      "is_mandatory": true,
+      "prerequisites": [],
+      "unlocks": [],
+      "has_lab": true,
+      "lab_course_code": "BMAT101P",
+      "lab_credits": 1,
+      "year_offered": 1,
+      "difficulty": 60,
+      "pass_rate": 0.78,
+      "L": 3,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "A1",
+        "B1",
+        "C1",
+        "D1",
+        "E1"
+      ]
+    },
+    {
+      "id": 15,
+      "course_code": "BMAT101P",
+      "course_name": "Calculus Lab",
+      "credits": 1,
+      "course_type": "Foundation Core",
+      "is_mandatory": true,
+      "prerequisites": [],
+      "unlocks": [],
+      "has_lab": false,
+      "is_lab": true,
+      "theory_course_code": "BMAT101L",
+      "year_offered": 1,
+      "difficulty": 45,
+      "pass_rate": 0.85,
+      "L": 0,
+      "T": 0,
+      "P": 2,
+      "J": 0,
+      "slots": [
+        "L21",
+        "L22",
+        "L23",
+        "L24"
+      ]
+    },
+    {
+      "id": 16,
+      "course_code": "BMAT102L",
+      "course_name": "Differential Equations and Transforms",
+      "credits": 4,
+      "course_type": "Foundation Core",
+      "is_mandatory": true,
+      "prerequisites": [
+        "BMAT101L"
+      ],
+      "unlocks": [],
+      "has_lab": false,
+      "year_offered": 1,
+      "difficulty": 65,
+      "pass_rate": 0.75,
+      "L": 3,
+      "T": 1,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "A2",
+        "B2",
+        "C2",
+        "D2",
+        "E2"
+      ]
+    },
+    {
+      "id": 17,
+      "course_code": "BMAT201L",
+      "course_name": "Complex Variables and Linear Algebra",
+      "credits": 4,
+      "course_type": "Foundation Core",
+      "is_mandatory": true,
+      "prerequisites": [
+        "BMAT101L",
+        "BMAT102L"
+      ],
+      "unlocks": [],
+      "has_lab": false,
+      "year_offered": 2,
+      "difficulty": 68,
+      "pass_rate": 0.74,
+      "L": 3,
+      "T": 1,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "F1",
+        "F2",
+        "G1",
+        "G2"
+      ]
+    },
+    {
+      "id": 18,
+      "course_code": "BMAT202L",
+      "course_name": "Probability and Statistics",
+      "credits": 3,
+      "course_type": "Foundation Core",
+      "is_mandatory": true,
+      "prerequisites": [
+        "BMAT101L"
+      ],
+      "unlocks": [],
+      "has_lab": true,
+      "lab_course_code": "BMAT202P",
+      "lab_credits": 1,
+      "year_offered": 2,
+      "difficulty": 62,
+      "pass_rate": 0.8,
+      "L": 3,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "A1",
+        "B1",
+        "C1",
+        "D1"
+      ]
+    },
+    {
+      "id": 19,
+      "course_code": "BMAT202P",
+      "course_name": "Probability and Statistics Lab",
+      "credits": 1,
+      "course_type": "Foundation Core",
+      "is_mandatory": true,
+      "prerequisites": [],
+      "unlocks": [],
+      "has_lab": false,
+      "is_lab": true,
+      "theory_course_code": "BMAT202L",
+      "year_offered": 2,
+      "difficulty": 50,
+      "pass_rate": 0.87,
+      "L": 0,
+      "T": 0,
+      "P": 2,
+      "J": 0,
+      "slots": [
+        "L25",
+        "L26",
+        "L27",
+        "L28"
+      ]
+    },
+    {
+      "id": 20,
+      "course_code": "BPHY101L",
+      "course_name": "Engineering Physics",
+      "credits": 3,
+      "course_type": "Foundation Core",
+      "is_mandatory": true,
+      "prerequisites": [],
+      "unlocks": [],
+      "has_lab": true,
+      "lab_course_code": "BPHY101P",
+      "lab_credits": 1,
+      "year_offered": 1,
+      "difficulty": 48,
+      "pass_rate": 0.84,
+      "L": 3,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "A2",
+        "B2",
+        "C2",
+        "D2"
+      ]
+    },
+    {
+      "id": 21,
+      "course_code": "BPHY101P",
+      "course_name": "Engineering Physics Lab",
+      "credits": 1,
+      "course_type": "Foundation Core",
+      "is_mandatory": true,
+      "prerequisites": [],
+      "unlocks": [],
+      "has_lab": false,
+      "is_lab": true,
+      "theory_course_code": "BPHY101L",
+      "year_offered": 1,
+      "difficulty": 32,
+      "pass_rate": 0.91,
+      "L": 0,
+      "T": 0,
+      "P": 2,
+      "J": 0,
+      "slots": [
+        "L29",
+        "L30",
+        "L31",
+        "L32"
+      ]
+    },
+    {
+      "id": 22,
+      "course_code": "BSTS101P",
+      "course_name": "Quantitative Skills Practice I",
+      "credits": 1,
+      "course_type": "Foundation Core",
+      "is_mandatory": true,
+      "prerequisites": [],
+      "unlocks": [],
+      "has_lab": false,
+      "soft_skill": true,
+      "year_offered": 1,
+      "difficulty": 35,
+      "pass_rate": 0.92,
+      "L": 0,
+      "T": 0,
+      "P": 3,
+      "J": 0,
+      "slots": [
+        "SS1"
+      ]
+    },
+    {
+      "id": 23,
+      "course_code": "BSTS102P",
+      "course_name": "Quantitative Skills Practice II",
+      "credits": 1,
+      "course_type": "Foundation Core",
+      "is_mandatory": true,
+      "prerequisites": [],
+      "unlocks": [],
+      "has_lab": false,
+      "soft_skill": true,
+      "year_offered": 1,
+      "difficulty": 35,
+      "pass_rate": 0.92,
+      "L": 0,
+      "T": 0,
+      "P": 3,
+      "J": 0,
+      "slots": [
+        "SS2"
+      ]
+    },
+    {
+      "id": 24,
+      "course_code": "BSTS201P",
+      "course_name": "Qualitative Skills Practice I",
+      "credits": 1,
+      "course_type": "Foundation Core",
+      "is_mandatory": true,
+      "prerequisites": [],
+      "unlocks": [],
+      "has_lab": false,
+      "soft_skill": true,
+      "year_offered": 2,
+      "difficulty": 35,
+      "pass_rate": 0.93,
+      "L": 0,
+      "T": 0,
+      "P": 3,
+      "J": 0,
+      "slots": [
+        "SS3"
+      ]
+    },
+    {
+      "id": 25,
+      "course_code": "BSTS202P",
+      "course_name": "Qualitative Skills Practice II",
+      "credits": 1,
+      "course_type": "Foundation Core",
+      "is_mandatory": true,
+      "prerequisites": [],
+      "unlocks": [],
+      "has_lab": false,
+      "soft_skill": true,
+      "year_offered": 2,
+      "difficulty": 35,
+      "pass_rate": 0.93,
+      "L": 0,
+      "T": 0,
+      "P": 3,
+      "J": 0,
+      "slots": [
+        "SS4"
+      ]
+    },
+    {
+      "id": 26,
+      "course_code": "BECE102L",
+      "course_name": "Digital Systems Design",
+      "credits": 3,
+      "course_type": "Discipline-linked Engineering Sciences",
+      "is_mandatory": true,
+      "prerequisites": [],
+      "unlocks": [],
+      "has_lab": true,
+      "lab_course_code": "BECE102P",
+      "lab_credits": 1,
+      "year_offered": 1,
+      "difficulty": 58,
+      "pass_rate": 0.81,
+      "L": 3,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "E1",
+        "E2",
+        "F1",
+        "F2"
+      ]
+    },
+    {
+      "id": 27,
+      "course_code": "BECE102P",
+      "course_name": "Digital Systems Design Lab",
+      "credits": 1,
+      "course_type": "Discipline-linked Engineering Sciences",
+      "is_mandatory": true,
+      "prerequisites": [],
+      "unlocks": [],
+      "has_lab": false,
+      "is_lab": true,
+      "theory_course_code": "BECE102L",
+      "year_offered": 1,
+      "difficulty": 50,
+      "pass_rate": 0.86,
+      "L": 0,
+      "T": 0,
+      "P": 2,
+      "J": 0,
+      "slots": [
+        "L33",
+        "L34",
+        "L35",
+        "L36"
+      ]
+    },
+    {
+      "id": 28,
+      "course_code": "BECE204L",
+      "course_name": "Microprocessors and Microcontrollers",
+      "credits": 3,
+      "course_type": "Discipline-linked Engineering Sciences",
+      "is_mandatory": true,
+      "prerequisites": [
+        "BECE102L"
+      ],
+      "unlocks": [],
+      "has_lab": true,
+      "lab_course_code": "BECE204P",
+      "lab_credits": 1,
+      "year_offered": 2,
+      "difficulty": 65,
+      "pass_rate": 0.77,
+      "L": 3,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "A1",
+        "B1",
+        "C1",
+        "D1"
+      ]
+    },
+    {
+      "id": 29,
+      "course_code": "BECE204P",
+      "course_name": "Microprocessors and Microcontrollers Lab",
+      "credits": 1,
+      "course_type": "Discipline-linked Engineering Sciences",
+      "is_mandatory": true,
+      "prerequisites": [],
+      "unlocks": [],
+      "has_lab": false,
+      "is_lab": true,
+      "theory_course_code": "BECE204L",
+      "year_offered": 2,
+      "difficulty": 58,
+      "pass_rate": 0.83,
+      "L": 0,
+      "T": 0,
+      "P": 2,
+      "J": 0,
+      "slots": [
+        "L37",
+        "L38",
+        "L39",
+        "L40"
+      ]
+    },
+    {
+      "id": 30,
+      "course_code": "BMAT205L",
+      "course_name": "Discrete Mathematics and Graph Theory",
+      "credits": 4,
+      "course_type": "Discipline-linked Engineering Sciences",
+      "is_mandatory": true,
+      "prerequisites": [
+        "BMAT201L"
+      ],
+      "unlocks": [],
+      "has_lab": false,
+      "year_offered": 2,
+      "difficulty": 70,
+      "pass_rate": 0.76,
+      "L": 3,
+      "T": 1,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "E1",
+        "E2",
+        "F1",
+        "F2"
+      ]
+    },
+    {
+      "id": 31,
+      "course_code": "BCSE202L",
+      "course_name": "Data Structures and Algorithms",
+      "credits": 3,
+      "course_type": "Discipline Core",
+      "is_mandatory": true,
+      "prerequisites": [
+        "BCSE101E",
+        "BCSE102L"
+      ],
+      "unlocks": [],
+      "has_lab": true,
+      "lab_course_code": "BCSE202P",
+      "lab_credits": 1,
+      "year_offered": 2,
+      "difficulty": 70,
+      "pass_rate": 0.79,
+      "L": 3,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "A1",
+        "B1",
+        "C1",
+        "D1",
+        "E1"
+      ]
+    },
+    {
+      "id": 32,
+      "course_code": "BCSE202P",
+      "course_name": "Data Structures and Algorithms Lab",
+      "credits": 1,
+      "course_type": "Discipline Core",
+      "is_mandatory": true,
+      "prerequisites": [],
+      "unlocks": [],
+      "has_lab": false,
+      "is_lab": true,
+      "theory_course_code": "BCSE202L",
+      "year_offered": 2,
+      "difficulty": 65,
+      "pass_rate": 0.82,
+      "L": 0,
+      "T": 0,
+      "P": 2,
+      "J": 0,
+      "slots": [
+        "L1",
+        "L2",
+        "L3",
+        "L4",
+        "L5"
+      ]
+    },
+    {
+      "id": 33,
+      "course_code": "BCSE203E",
+      "course_name": "Web Programming",
+      "credits": 3,
+      "course_type": "Discipline Core",
+      "is_mandatory": true,
+      "prerequisites": [
+        "BCSE102L"
+      ],
+      "unlocks": [],
+      "has_lab": false,
+      "embedded_lab": true,
+      "year_offered": 2,
+      "difficulty": 55,
+      "pass_rate": 0.84,
+      "L": 1,
+      "T": 0,
+      "P": 4,
+      "J": 0,
+      "slots": [
+        "F1",
+        "F2",
+        "G1",
+        "G2"
+      ]
+    },
+    {
+      "id": 34,
+      "course_code": "BCSE204L",
+      "course_name": "Design and Analysis of Algorithms",
+      "credits": 3,
+      "course_type": "Discipline Core",
+      "is_mandatory": true,
+      "prerequisites": [
+        "BCSE202L"
+      ],
+      "unlocks": [],
+      "has_lab": true,
+      "lab_course_code": "BCSE204P",
+      "lab_credits": 1,
+      "year_offered": 2,
+      "difficulty": 72,
+      "pass_rate": 0.75,
+      "L": 3,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "A2",
+        "B2",
+        "C2",
+        "D2",
+        "E2"
+      ]
+    },
+    {
+      "id": 35,
+      "course_code": "BCSE204P",
+      "course_name": "Design and Analysis of Algorithms Lab",
+      "credits": 1,
+      "course_type": "Discipline Core",
+      "is_mandatory": true,
+      "prerequisites": [],
+      "unlocks": [],
+      "has_lab": false,
+      "is_lab": true,
+      "theory_course_code": "BCSE204L",
+      "year_offered": 2,
+      "difficulty": 68,
+      "pass_rate": 0.78,
+      "L": 0,
+      "T": 0,
+      "P": 2,
+      "J": 0,
+      "slots": [
+        "L6",
+        "L7",
+        "L8",
+        "L9"
+      ]
+    },
+    {
+      "id": 36,
+      "course_code": "BCSE205L",
+      "course_name": "Computer Architecture and Organization",
+      "credits": 3,
+      "course_type": "Discipline Core",
+      "is_mandatory": true,
+      "prerequisites": [
+        "BECE102L"
+      ],
+      "unlocks": [],
+      "has_lab": false,
+      "year_offered": 2,
+      "difficulty": 68,
+      "pass_rate": 0.77,
+      "L": 3,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "F1",
+        "F2",
+        "G1",
+        "G2"
+      ]
+    },
+    {
+      "id": 37,
+      "course_code": "BCSE301L",
+      "course_name": "Software Engineering",
+      "credits": 3,
+      "course_type": "Discipline Core",
+      "is_mandatory": true,
+      "prerequisites": [
+        "BCSE103E",
+        "BCSE202L"
+      ],
+      "unlocks": [],
+      "has_lab": true,
+      "lab_course_code": "BCSE301P",
+      "lab_credits": 1,
+      "year_offered": 3,
+      "difficulty": 62,
+      "pass_rate": 0.83,
+      "L": 3,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "A1",
+        "B1",
+        "C1",
+        "D1"
+      ]
+    },
+    {
+      "id": 38,
+      "course_code": "BCSE301P",
+      "course_name": "Software Engineering Lab",
+      "credits": 1,
+      "course_type": "Discipline Core",
+      "is_mandatory": true,
+      "prerequisites": [],
+      "unlocks": [],
+      "has_lab": false,
+      "is_lab": true,
+      "theory_course_code": "BCSE301L",
+      "year_offered": 3,
+      "difficulty": 55,
+      "pass_rate": 0.87,
+      "L": 0,
+      "T": 0,
+      "P": 2,
+      "J": 0,
+      "slots": [
+        "L1",
+        "L2",
+        "L3",
+        "L4"
+      ]
+    },
+    {
+      "id": 39,
+      "course_code": "BCSE302L",
+      "course_name": "Database Systems",
+      "credits": 3,
+      "course_type": "Discipline Core",
+      "is_mandatory": true,
+      "prerequisites": [
+        "BCSE202L"
+      ],
+      "unlocks": [],
+      "has_lab": true,
+      "lab_course_code": "BCSE302P",
+      "lab_credits": 1,
+      "year_offered": 3,
+      "difficulty": 65,
+      "pass_rate": 0.8,
+      "L": 3,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "A2",
+        "B2",
+        "C2",
+        "D2"
+      ]
+    },
+    {
+      "id": 40,
+      "course_code": "BCSE302P",
+      "course_name": "Database Systems Lab",
+      "credits": 1,
+      "course_type": "Discipline Core",
+      "is_mandatory": true,
+      "prerequisites": [],
+      "unlocks": [],
+      "has_lab": false,
+      "is_lab": true,
+      "theory_course_code": "BCSE302L",
+      "year_offered": 3,
+      "difficulty": 60,
+      "pass_rate": 0.84,
+      "L": 0,
+      "T": 0,
+      "P": 2,
+      "J": 0,
+      "slots": [
+        "L5",
+        "L6",
+        "L7",
+        "L8"
+      ]
+    },
+    {
+      "id": 41,
+      "course_code": "BCSE303L",
+      "course_name": "Operating Systems",
+      "credits": 3,
+      "course_type": "Discipline Core",
+      "is_mandatory": true,
+      "prerequisites": [
+        "BCSE205L"
+      ],
+      "unlocks": [],
+      "has_lab": true,
+      "lab_course_code": "BCSE303P",
+      "lab_credits": 1,
+      "year_offered": 3,
+      "difficulty": 70,
+      "pass_rate": 0.76,
+      "L": 3,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "E1",
+        "E2",
+        "F1",
+        "F2"
+      ]
+    },
+    {
+      "id": 42,
+      "course_code": "BCSE303P",
+      "course_name": "Operating Systems Lab",
+      "credits": 1,
+      "course_type": "Discipline Core",
+      "is_mandatory": true,
+      "prerequisites": [],
+      "unlocks": [],
+      "has_lab": false,
+      "is_lab": true,
+      "theory_course_code": "BCSE303L",
+      "year_offered": 3,
+      "difficulty": 65,
+      "pass_rate": 0.8,
+      "L": 0,
+      "T": 0,
+      "P": 2,
+      "J": 0,
+      "slots": [
+        "L9",
+        "L10",
+        "L11",
+        "L12"
+      ]
+    },
+    {
+      "id": 43,
+      "course_code": "BCSE304L",
+      "course_name": "Theory of Computation",
+      "credits": 3,
+      "course_type": "Discipline Core",
+      "is_mandatory": true,
+      "prerequisites": [
+        "BCSE204L"
+      ],
+      "unlocks": [],
+      "has_lab": false,
+      "year_offered": 3,
+      "difficulty": 75,
+      "pass_rate": 0.72,
+      "L": 3,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "G1",
+        "G2",
+        "A1",
+        "B1"
+      ]
+    },
+    {
+      "id": 44,
+      "course_code": "BCSE305L",
+      "course_name": "Embedded Systems",
+      "credits": 3,
+      "course_type": "Discipline Core",
+      "is_mandatory": true,
+      "prerequisites": [
+        "BCSE205L",
+        "BECE204L"
+      ],
+      "unlocks": [],
+      "has_lab": false,
+      "year_offered": 3,
+      "difficulty": 68,
+      "pass_rate": 0.78,
+      "L": 3,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "C1",
+        "C2",
+        "D1",
+        "D2"
+      ]
+    },
+    {
+      "id": 45,
+      "course_code": "BCSE306L",
+      "course_name": "Artificial Intelligence",
+      "credits": 3,
+      "course_type": "Discipline Core",
+      "is_mandatory": true,
+      "prerequisites": [
+        "BCSE202L",
+        "BMAT202L"
+      ],
+      "unlocks": [],
+      "has_lab": false,
+      "year_offered": 3,
+      "difficulty": 72,
+      "pass_rate": 0.74,
+      "L": 3,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "E1",
+        "E2",
+        "F1",
+        "F2"
+      ]
+    },
+    {
+      "id": 46,
+      "course_code": "BCSE307L",
+      "course_name": "Compiler Design",
+      "credits": 3,
+      "course_type": "Discipline Core",
+      "is_mandatory": true,
+      "prerequisites": [
+        "BCSE204L",
+        "BCSE304L"
+      ],
+      "unlocks": [],
+      "has_lab": true,
+      "lab_course_code": "BCSE307P",
+      "lab_credits": 1,
+      "year_offered": 3,
+      "difficulty": 74,
+      "pass_rate": 0.73,
+      "L": 3,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "G1",
+        "G2",
+        "A2",
+        "B2"
+      ]
+    },
+    {
+      "id": 47,
+      "course_code": "BCSE307P",
+      "course_name": "Compiler Design Lab",
+      "credits": 1,
+      "course_type": "Discipline Core",
+      "is_mandatory": true,
+      "prerequisites": [],
+      "unlocks": [],
+      "has_lab": false,
+      "is_lab": true,
+      "theory_course_code": "BCSE307L",
+      "year_offered": 3,
+      "difficulty": 70,
+      "pass_rate": 0.77,
+      "L": 0,
+      "T": 0,
+      "P": 2,
+      "J": 0,
+      "slots": [
+        "L13",
+        "L14",
+        "L15",
+        "L16"
+      ]
+    },
+    {
+      "id": 48,
+      "course_code": "BCSE308L",
+      "course_name": "Computer Networks",
+      "credits": 3,
+      "course_type": "Discipline Core",
+      "is_mandatory": true,
+      "prerequisites": [
+        "BCSE303L"
+      ],
+      "unlocks": [],
+      "has_lab": true,
+      "lab_course_code": "BCSE308P",
+      "lab_credits": 1,
+      "year_offered": 3,
+      "difficulty": 66,
+      "pass_rate": 0.79,
+      "L": 3,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "C1",
+        "C2",
+        "D1",
+        "D2"
+      ]
+    },
+    {
+      "id": 49,
+      "course_code": "BCSE308P",
+      "course_name": "Computer Networks Lab",
+      "credits": 1,
+      "course_type": "Discipline Core",
+      "is_mandatory": true,
+      "prerequisites": [],
+      "unlocks": [],
+      "has_lab": false,
+      "is_lab": true,
+      "theory_course_code": "BCSE308L",
+      "year_offered": 3,
+      "difficulty": 60,
+      "pass_rate": 0.83,
+      "L": 0,
+      "T": 0,
+      "P": 2,
+      "J": 0,
+      "slots": [
+        "L17",
+        "L18",
+        "L19",
+        "L20"
+      ]
+    },
+    {
+      "id": 50,
+      "course_code": "BCSE309L",
+      "course_name": "Cryptography and Network Security",
+      "credits": 3,
+      "course_type": "Discipline Core",
+      "is_mandatory": true,
+      "prerequisites": [
+        "BCSE308L"
+      ],
+      "unlocks": [],
+      "has_lab": true,
+      "lab_course_code": "BCSE309P",
+      "lab_credits": 1,
+      "year_offered": 3,
+      "difficulty": 69,
+      "pass_rate": 0.77,
+      "L": 3,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "E1",
+        "E2",
+        "F1",
+        "F2"
+      ]
+    },
+    {
+      "id": 51,
+      "course_code": "BCSE309P",
+      "course_name": "Cryptography and Network Security Lab",
+      "credits": 1,
+      "course_type": "Discipline Core",
+      "is_mandatory": true,
+      "prerequisites": [],
+      "unlocks": [],
+      "has_lab": false,
+      "is_lab": true,
+      "theory_course_code": "BCSE309L",
+      "year_offered": 3,
+      "difficulty": 63,
+      "pass_rate": 0.81,
+      "L": 0,
+      "T": 0,
+      "P": 2,
+      "J": 0,
+      "slots": [
+        "L21",
+        "L22",
+        "L23",
+        "L24"
+      ]
+    },
+    {
+      "id": 52,
+      "course_code": "BCSE206L",
+      "course_name": "Foundations of Data Science",
+      "credits": 3,
+      "course_type": "Discipline Elective",
+      "is_mandatory": false,
+      "prerequisites": [
+        "BMAT202L"
+      ],
+      "unlocks": [],
+      "has_lab": false,
+      "year_offered": 2,
+      "difficulty": 64,
+      "pass_rate": 0.81,
+      "L": 3,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "A1",
+        "B1",
+        "C1",
+        "D1"
+      ]
+    },
+    {
+      "id": 53,
+      "course_code": "BCSE207L",
+      "course_name": "Programming for Data Science",
+      "credits": 2,
+      "course_type": "Discipline Elective",
+      "is_mandatory": false,
+      "prerequisites": [
+        "BCSE101E"
+      ],
+      "unlocks": [],
+      "has_lab": true,
+      "lab_course_code": "BCSE207P",
+      "lab_credits": 1,
+      "year_offered": 2,
+      "difficulty": 58,
+      "pass_rate": 0.84,
+      "L": 2,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "E1",
+        "E2",
+        "F1",
+        "F2"
+      ]
+    },
+    {
+      "id": 54,
+      "course_code": "BCSE207P",
+      "course_name": "Programming for Data Science Lab",
+      "credits": 1,
+      "course_type": "Discipline Elective",
+      "is_mandatory": false,
+      "prerequisites": [],
+      "unlocks": [],
+      "has_lab": false,
+      "is_lab": true,
+      "theory_course_code": "BCSE207L",
+      "year_offered": 2,
+      "difficulty": 52,
+      "pass_rate": 0.87,
+      "L": 0,
+      "T": 0,
+      "P": 2,
+      "J": 0,
+      "slots": [
+        "L10",
+        "L11",
+        "L12",
+        "L13"
+      ]
+    },
+    {
+      "id": 55,
+      "course_code": "BCSE208L",
+      "course_name": "Data Mining",
+      "credits": 2,
+      "course_type": "Discipline Elective",
+      "is_mandatory": false,
+      "prerequisites": [
+        "BCSE202L",
+        "BMAT202L"
+      ],
+      "unlocks": [],
+      "has_lab": true,
+      "lab_course_code": "BCSE208P",
+      "lab_credits": 1,
+      "year_offered": 2,
+      "difficulty": 66,
+      "pass_rate": 0.78,
+      "L": 2,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "G1",
+        "G2",
+        "A1",
+        "B1"
+      ]
+    },
+    {
+      "id": 56,
+      "course_code": "BCSE208P",
+      "course_name": "Data Mining Lab",
+      "credits": 1,
+      "course_type": "Discipline Elective",
+      "is_mandatory": false,
+      "prerequisites": [],
+      "unlocks": [],
+      "has_lab": false,
+      "is_lab": true,
+      "theory_course_code": "BCSE208L",
+      "year_offered": 2,
+      "difficulty": 60,
+      "pass_rate": 0.82,
+      "L": 0,
+      "T": 0,
+      "P": 2,
+      "J": 0,
+      "slots": [
+        "L14",
+        "L15",
+        "L16",
+        "L17"
+      ]
+    },
+    {
+      "id": 57,
+      "course_code": "BCSE209L",
+      "course_name": "Machine Learning",
+      "credits": 3,
+      "course_type": "Discipline Elective",
+      "is_mandatory": false,
+      "prerequisites": [
+        "BCSE306L",
+        "BMAT202L"
+      ],
+      "unlocks": [],
+      "has_lab": true,
+      "lab_course_code": "BCSE209P",
+      "lab_credits": 1,
+      "year_offered": 2,
+      "difficulty": 73,
+      "pass_rate": 0.75,
+      "L": 3,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "C1",
+        "C2",
+        "D1",
+        "D2"
+      ]
+    },
+    {
+      "id": 58,
+      "course_code": "BCSE209P",
+      "course_name": "Machine Learning Lab",
+      "credits": 1,
+      "course_type": "Discipline Elective",
+      "is_mandatory": false,
+      "prerequisites": [],
+      "unlocks": [],
+      "has_lab": false,
+      "is_lab": true,
+      "theory_course_code": "BCSE209L",
+      "year_offered": 2,
+      "difficulty": 68,
+      "pass_rate": 0.79,
+      "L": 0,
+      "T": 0,
+      "P": 2,
+      "J": 0,
+      "slots": [
+        "L18",
+        "L19",
+        "L20",
+        "L21"
+      ]
+    },
+    {
+      "id": 59,
+      "course_code": "BCSE310L",
+      "course_name": "IoT Architectures and Protocols",
+      "credits": 3,
+      "course_type": "Discipline Elective",
+      "is_mandatory": false,
+      "prerequisites": [
+        "BCSE308L"
+      ],
+      "unlocks": [],
+      "has_lab": false,
+      "year_offered": 3,
+      "difficulty": 65,
+      "pass_rate": 0.8,
+      "L": 3,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "A1",
+        "B1",
+        "C1",
+        "D1"
+      ]
+    },
+    {
+      "id": 60,
+      "course_code": "BCSE311L",
+      "course_name": "Sensors and Actuator Devices",
+      "credits": 2,
+      "course_type": "Discipline Elective",
+      "is_mandatory": false,
+      "prerequisites": [
+        "BCSE305L"
+      ],
+      "unlocks": [],
+      "has_lab": true,
+      "lab_course_code": "BCSE311P",
+      "lab_credits": 1,
+      "year_offered": 3,
+      "difficulty": 60,
+      "pass_rate": 0.82,
+      "L": 2,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "E1",
+        "E2",
+        "F1",
+        "F2"
+      ]
+    },
+    {
+      "id": 61,
+      "course_code": "BCSE311P",
+      "course_name": "Sensors and Actuator Devices Lab",
+      "credits": 1,
+      "course_type": "Discipline Elective",
+      "is_mandatory": false,
+      "prerequisites": [],
+      "unlocks": [],
+      "has_lab": false,
+      "is_lab": true,
+      "theory_course_code": "BCSE311L",
+      "year_offered": 3,
+      "difficulty": 54,
+      "pass_rate": 0.86,
+      "L": 0,
+      "T": 0,
+      "P": 2,
+      "J": 0,
+      "slots": [
+        "L22",
+        "L23",
+        "L24",
+        "L25"
+      ]
+    },
+    {
+      "id": 62,
+      "course_code": "BCSE312L",
+      "course_name": "Programming for IoT Boards",
+      "credits": 2,
+      "course_type": "Discipline Elective",
+      "is_mandatory": false,
+      "prerequisites": [
+        "BCSE305L"
+      ],
+      "unlocks": [],
+      "has_lab": true,
+      "lab_course_code": "BCSE312P",
+      "lab_credits": 1,
+      "year_offered": 3,
+      "difficulty": 62,
+      "pass_rate": 0.81,
+      "L": 2,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "G1",
+        "G2",
+        "A1",
+        "B1"
+      ]
+    },
+    {
+      "id": 63,
+      "course_code": "BCSE312P",
+      "course_name": "Programming for IoT Boards Lab",
+      "credits": 1,
+      "course_type": "Discipline Elective",
+      "is_mandatory": false,
+      "prerequisites": [],
+      "unlocks": [],
+      "has_lab": false,
+      "is_lab": true,
+      "theory_course_code": "BCSE312L",
+      "year_offered": 3,
+      "difficulty": 56,
+      "pass_rate": 0.84,
+      "L": 0,
+      "T": 0,
+      "P": 2,
+      "J": 0,
+      "slots": [
+        "L26",
+        "L27",
+        "L28",
+        "L29"
+      ]
+    },
+    {
+      "id": 64,
+      "course_code": "BCSE313L",
+      "course_name": "Fundamentals of Fog and Edge Computing",
+      "credits": 3,
+      "course_type": "Discipline Elective",
+      "is_mandatory": false,
+      "prerequisites": [
+        "BCSE308L"
+      ],
+      "unlocks": [],
+      "has_lab": false,
+      "year_offered": 3,
+      "difficulty": 67,
+      "pass_rate": 0.79,
+      "L": 3,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "C1",
+        "C2",
+        "D1",
+        "D2"
+      ]
+    },
+    {
+      "id": 65,
+      "course_code": "BCSE314L",
+      "course_name": "Privacy and Security in IoT",
+      "credits": 3,
+      "course_type": "Discipline Elective",
+      "is_mandatory": false,
+      "prerequisites": [
+        "BCSE309L"
+      ],
+      "unlocks": [],
+      "has_lab": false,
+      "year_offered": 3,
+      "difficulty": 68,
+      "pass_rate": 0.78,
+      "L": 3,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "E1",
+        "E2",
+        "F1",
+        "F2"
+      ]
+    },
+    {
+      "id": 66,
+      "course_code": "BCSE315L",
+      "course_name": "Wearable Computing",
+      "credits": 3,
+      "course_type": "Discipline Elective",
+      "is_mandatory": false,
+      "prerequisites": [],
+      "unlocks": [],
+      "has_lab": false,
+      "year_offered": 3,
+      "difficulty": 64,
+      "pass_rate": 0.81,
+      "L": 3,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "G1",
+        "G2",
+        "A2",
+        "B2"
+      ]
+    },
+    {
+      "id": 67,
+      "course_code": "BCSE316L",
+      "course_name": "Design of Smart Cities",
+      "credits": 3,
+      "course_type": "Discipline Elective",
+      "is_mandatory": false,
+      "prerequisites": [],
+      "unlocks": [],
+      "has_lab": false,
+      "year_offered": 3,
+      "difficulty": 63,
+      "pass_rate": 0.82,
+      "L": 3,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "C1",
+        "C2",
+        "D1",
+        "D2"
+      ]
+    },
+    {
+      "id": 68,
+      "course_code": "BCSE317L",
+      "course_name": "Information Security",
+      "credits": 3,
+      "course_type": "Discipline Elective",
+      "is_mandatory": false,
+      "prerequisites": [
+        "BCSE308L"
+      ],
+      "unlocks": [],
+      "has_lab": false,
+      "year_offered": 3,
+      "difficulty": 69,
+      "pass_rate": 0.77,
+      "L": 3,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "E1",
+        "E2",
+        "F1",
+        "F2"
+      ]
+    },
+    {
+      "id": 69,
+      "course_code": "BCSE318L",
+      "course_name": "Data Privacy",
+      "credits": 3,
+      "course_type": "Discipline Elective",
+      "is_mandatory": false,
+      "prerequisites": [
+        "BCSE302L"
+      ],
+      "unlocks": [],
+      "has_lab": false,
+      "year_offered": 3,
+      "difficulty": 66,
+      "pass_rate": 0.79,
+      "L": 3,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "G1",
+        "G2",
+        "A1",
+        "B1"
+      ]
+    },
+    {
+      "id": 70,
+      "course_code": "BCSE319L",
+      "course_name": "Penetration Testing and Vulnerability Analysis",
+      "credits": 2,
+      "course_type": "Discipline Elective",
+      "is_mandatory": false,
+      "prerequisites": [
+        "BCSE308L"
+      ],
+      "unlocks": [],
+      "has_lab": true,
+      "lab_course_code": "BCSE319P",
+      "lab_credits": 1,
+      "year_offered": 3,
+      "difficulty": 71,
+      "pass_rate": 0.76,
+      "L": 2,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "A1",
+        "B1",
+        "C1",
+        "D1"
+      ]
+    },
+    {
+      "id": 71,
+      "course_code": "BCSE319P",
+      "course_name": "Penetration Testing and Vulnerability Analysis Lab",
+      "credits": 1,
+      "course_type": "Discipline Elective",
+      "is_mandatory": false,
+      "prerequisites": [],
+      "unlocks": [],
+      "has_lab": false,
+      "is_lab": true,
+      "theory_course_code": "BCSE319L",
+      "year_offered": 3,
+      "difficulty": 65,
+      "pass_rate": 0.8,
+      "L": 0,
+      "T": 0,
+      "P": 2,
+      "J": 0,
+      "slots": [
+        "L30",
+        "L31",
+        "L32",
+        "L33"
+      ]
+    },
+    {
+      "id": 72,
+      "course_code": "BCSE320L",
+      "course_name": "Web Application Security",
+      "credits": 3,
+      "course_type": "Discipline Elective",
+      "is_mandatory": false,
+      "prerequisites": [
+        "BCSE203E"
+      ],
+      "unlocks": [],
+      "has_lab": false,
+      "year_offered": 3,
+      "difficulty": 68,
+      "pass_rate": 0.78,
+      "L": 3,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "E1",
+        "E2",
+        "F1",
+        "F2"
+      ]
+    },
+    {
+      "id": 73,
+      "course_code": "BCSE321L",
+      "course_name": "Malware Analysis",
+      "credits": 2,
+      "course_type": "Discipline Elective",
+      "is_mandatory": false,
+      "prerequisites": [
+        "BCSE303L"
+      ],
+      "unlocks": [],
+      "has_lab": true,
+      "lab_course_code": "BCSE321P",
+      "lab_credits": 1,
+      "year_offered": 3,
+      "difficulty": 72,
+      "pass_rate": 0.74,
+      "L": 2,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "G1",
+        "G2",
+        "A2",
+        "B2"
+      ]
+    },
+    {
+      "id": 74,
+      "course_code": "BCSE321P",
+      "course_name": "Malware Analysis Lab",
+      "credits": 1,
+      "course_type": "Discipline Elective",
+      "is_mandatory": false,
+      "prerequisites": [],
+      "unlocks": [],
+      "has_lab": false,
+      "is_lab": true,
+      "theory_course_code": "BCSE321L",
+      "year_offered": 3,
+      "difficulty": 67,
+      "pass_rate": 0.78,
+      "L": 0,
+      "T": 0,
+      "P": 2,
+      "J": 0,
+      "slots": [
+        "L34",
+        "L35",
+        "L36",
+        "L37"
+      ]
+    },
+    {
+      "id": 75,
+      "course_code": "BCSE322L",
+      "course_name": "Digital Forensics",
+      "credits": 2,
+      "course_type": "Discipline Elective",
+      "is_mandatory": false,
+      "prerequisites": [
+        "BCSE303L"
+      ],
+      "unlocks": [],
+      "has_lab": true,
+      "lab_course_code": "BCSE322P",
+      "lab_credits": 1,
+      "year_offered": 3,
+      "difficulty": 70,
+      "pass_rate": 0.76,
+      "L": 2,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "C1",
+        "C2",
+        "D1",
+        "D2"
+      ]
+    },
+    {
+      "id": 76,
+      "course_code": "BCSE322P",
+      "course_name": "Digital Forensics Lab",
+      "credits": 1,
+      "course_type": "Discipline Elective",
+      "is_mandatory": false,
+      "prerequisites": [],
+      "unlocks": [],
+      "has_lab": false,
+      "is_lab": true,
+      "theory_course_code": "BCSE322L",
+      "year_offered": 3,
+      "difficulty": 64,
+      "pass_rate": 0.8,
+      "L": 0,
+      "T": 0,
+      "P": 2,
+      "J": 0,
+      "slots": [
+        "L38",
+        "L39",
+        "L40",
+        "L41"
+      ]
+    },
+    {
+      "id": 77,
+      "course_code": "BCSE323L",
+      "course_name": "Digital Watermarking and Steganography",
+      "credits": 3,
+      "course_type": "Discipline Elective",
+      "is_mandatory": false,
+      "prerequisites": [
+        "BCSE302L"
+      ],
+      "unlocks": [],
+      "has_lab": false,
+      "year_offered": 3,
+      "difficulty": 69,
+      "pass_rate": 0.77,
+      "L": 3,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "E1",
+        "E2",
+        "F1",
+        "F2"
+      ]
+    },
+    {
+      "id": 78,
+      "course_code": "BCSE324L",
+      "course_name": "Foundations of Blockchain Technology",
+      "credits": 3,
+      "course_type": "Discipline Elective",
+      "is_mandatory": false,
+      "prerequisites": [
+        "BCSE302L"
+      ],
+      "unlocks": [],
+      "has_lab": false,
+      "year_offered": 3,
+      "difficulty": 67,
+      "pass_rate": 0.79,
+      "L": 3,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "G1",
+        "G2",
+        "A1",
+        "B1"
+      ]
+    },
+    {
+      "id": 79,
+      "course_code": "BCSE325L",
+      "course_name": "Introduction to Bitcoin",
+      "credits": 3,
+      "course_type": "Discipline Elective",
+      "is_mandatory": false,
+      "prerequisites": [
+        "BCSE324L"
+      ],
+      "unlocks": [],
+      "has_lab": false,
+      "year_offered": 3,
+      "difficulty": 64,
+      "pass_rate": 0.81,
+      "L": 3,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "C1",
+        "C2",
+        "D1",
+        "D2"
+      ]
+    },
+    {
+      "id": 80,
+      "course_code": "BCSE326L",
+      "course_name": "Blockchain Architecture Design",
+      "credits": 3,
+      "course_type": "Discipline Elective",
+      "is_mandatory": false,
+      "prerequisites": [
+        "BCSE324L"
+      ],
+      "unlocks": [],
+      "has_lab": false,
+      "year_offered": 3,
+      "difficulty": 70,
+      "pass_rate": 0.76,
+      "L": 3,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "E1",
+        "E2",
+        "F1",
+        "F2"
+      ]
+    },
+    {
+      "id": 81,
+      "course_code": "BCSE327L",
+      "course_name": "Smart Contracts",
+      "credits": 2,
+      "course_type": "Discipline Elective",
+      "is_mandatory": false,
+      "prerequisites": [
+        "BCSE324L"
+      ],
+      "unlocks": [],
+      "has_lab": true,
+      "lab_course_code": "BCSE327P",
+      "lab_credits": 1,
+      "year_offered": 3,
+      "difficulty": 68,
+      "pass_rate": 0.78,
+      "L": 2,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "G1",
+        "G2",
+        "A2",
+        "B2"
+      ]
+    },
+    {
+      "id": 82,
+      "course_code": "BCSE327P",
+      "course_name": "Smart Contracts Lab",
+      "credits": 1,
+      "course_type": "Discipline Elective",
+      "is_mandatory": false,
+      "prerequisites": [],
+      "unlocks": [],
+      "has_lab": false,
+      "is_lab": true,
+      "theory_course_code": "BCSE327L",
+      "year_offered": 3,
+      "difficulty": 62,
+      "pass_rate": 0.82,
+      "L": 0,
+      "T": 0,
+      "P": 2,
+      "J": 0,
+      "slots": [
+        "L42",
+        "L43",
+        "L44",
+        "L45"
+      ]
+    },
+    {
+      "id": 83,
+      "course_code": "BCSE328L",
+      "course_name": "Cryptocurrency Technologies",
+      "credits": 3,
+      "course_type": "Discipline Elective",
+      "is_mandatory": false,
+      "prerequisites": [
+        "BCSE324L"
+      ],
+      "unlocks": [],
+      "has_lab": false,
+      "year_offered": 3,
+      "difficulty": 66,
+      "pass_rate": 0.79,
+      "L": 3,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "A1",
+        "B1",
+        "C1",
+        "D1"
+      ]
+    },
+    {
+      "id": 84,
+      "course_code": "BCSE329L",
+      "course_name": "Blockchain and Distributed Ledger Technology",
+      "credits": 2,
+      "course_type": "Discipline Elective",
+      "is_mandatory": false,
+      "prerequisites": [
+        "BCSE324L"
+      ],
+      "unlocks": [],
+      "has_lab": true,
+      "lab_course_code": "BCSE329P",
+      "lab_credits": 1,
+      "year_offered": 3,
+      "difficulty": 69,
+      "pass_rate": 0.77,
+      "L": 2,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "E1",
+        "E2",
+        "F1",
+        "F2"
+      ]
+    },
+    {
+      "id": 85,
+      "course_code": "BCSE329P",
+      "course_name": "Blockchain and Distributed Ledger Technology Lab",
+      "credits": 1,
+      "course_type": "Discipline Elective",
+      "is_mandatory": false,
+      "prerequisites": [],
+      "unlocks": [],
+      "has_lab": false,
+      "is_lab": true,
+      "theory_course_code": "BCSE329L",
+      "year_offered": 3,
+      "difficulty": 63,
+      "pass_rate": 0.81,
+      "L": 0,
+      "T": 0,
+      "P": 2,
+      "J": 0,
+      "slots": [
+        "L46",
+        "L47",
+        "L48",
+        "L49"
+      ]
+    },
+    {
+      "id": 86,
+      "course_code": "BCSE330L",
+      "course_name": "Public Key Infrastructure and Trust Management",
+      "credits": 3,
+      "course_type": "Discipline Elective",
+      "is_mandatory": false,
+      "prerequisites": [
+        "BCSE309L"
+      ],
+      "unlocks": [],
+      "has_lab": false,
+      "year_offered": 3,
+      "difficulty": 70,
+      "pass_rate": 0.76,
+      "L": 3,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "G1",
+        "G2",
+        "A1",
+        "B1"
+      ]
+    },
+    {
+      "id": 87,
+      "course_code": "BCSE331L",
+      "course_name": "Exploratory Data Analysis",
+      "credits": 2,
+      "course_type": "Discipline Elective",
+      "is_mandatory": false,
+      "prerequisites": [
+        "BCSE202L"
+      ],
+      "unlocks": [],
+      "has_lab": true,
+      "lab_course_code": "BCSE331P",
+      "lab_credits": 1,
+      "year_offered": 3,
+      "difficulty": 61,
+      "pass_rate": 0.82,
+      "L": 2,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "C1",
+        "C2",
+        "D1",
+        "D2"
+      ]
+    },
+    {
+      "id": 88,
+      "course_code": "BCSE331P",
+      "course_name": "Exploratory Data Analysis Lab",
+      "credits": 1,
+      "course_type": "Discipline Elective",
+      "is_mandatory": false,
+      "prerequisites": [],
+      "unlocks": [],
+      "has_lab": false,
+      "is_lab": true,
+      "theory_course_code": "BCSE331L",
+      "year_offered": 3,
+      "difficulty": 55,
+      "pass_rate": 0.86,
+      "L": 0,
+      "T": 0,
+      "P": 2,
+      "J": 0,
+      "slots": [
+        "L50",
+        "L51",
+        "L52",
+        "L53"
+      ]
+    },
+    {
+      "id": 89,
+      "course_code": "BCSE332L",
+      "course_name": "Deep Learning",
+      "credits": 3,
+      "course_type": "Discipline Elective",
+      "is_mandatory": false,
+      "prerequisites": [
+        "BCSE209L"
+      ],
+      "unlocks": [],
+      "has_lab": true,
+      "lab_course_code": "BCSE332P",
+      "lab_credits": 1,
+      "year_offered": 3,
+      "difficulty": 76,
+      "pass_rate": 0.72,
+      "L": 3,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "E1",
+        "E2",
+        "F1",
+        "F2"
+      ]
+    },
+    {
+      "id": 90,
+      "course_code": "BCSE332P",
+      "course_name": "Deep Learning Lab",
+      "credits": 1,
+      "course_type": "Discipline Elective",
+      "is_mandatory": false,
+      "prerequisites": [],
+      "unlocks": [],
+      "has_lab": false,
+      "is_lab": true,
+      "theory_course_code": "BCSE332L",
+      "year_offered": 3,
+      "difficulty": 72,
+      "pass_rate": 0.75,
+      "L": 0,
+      "T": 0,
+      "P": 2,
+      "J": 0,
+      "slots": [
+        "L54",
+        "L55",
+        "L56",
+        "L57"
+      ]
+    },
+    {
+      "id": 91,
+      "course_code": "BCSE333L",
+      "course_name": "Statistical Inference",
+      "credits": 2,
+      "course_type": "Discipline Elective",
+      "is_mandatory": false,
+      "prerequisites": [
+        "BMAT202L"
+      ],
+      "unlocks": [],
+      "has_lab": true,
+      "lab_course_code": "BCSE333P",
+      "lab_credits": 1,
+      "year_offered": 3,
+      "difficulty": 67,
+      "pass_rate": 0.79,
+      "L": 2,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "G1",
+        "G2",
+        "A2",
+        "B2"
+      ]
+    },
+    {
+      "id": 92,
+      "course_code": "BCSE333P",
+      "course_name": "Statistical Inference Lab",
+      "credits": 1,
+      "course_type": "Discipline Elective",
+      "is_mandatory": false,
+      "prerequisites": [],
+      "unlocks": [],
+      "has_lab": false,
+      "is_lab": true,
+      "theory_course_code": "BCSE333L",
+      "year_offered": 3,
+      "difficulty": 61,
+      "pass_rate": 0.83,
+      "L": 0,
+      "T": 0,
+      "P": 2,
+      "J": 0,
+      "slots": [
+        "L58",
+        "L59",
+        "L60"
+      ]
+    },
+    {
+      "id": 93,
+      "course_code": "BCSE334L",
+      "course_name": "Predictive Analytics",
+      "credits": 3,
+      "course_type": "Discipline Elective",
+      "is_mandatory": false,
+      "prerequisites": [
+        "BCSE209L"
+      ],
+      "unlocks": [],
+      "has_lab": false,
+      "year_offered": 3,
+      "difficulty": 68,
+      "pass_rate": 0.78,
+      "L": 3,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "A1",
+        "B1",
+        "C1",
+        "D1"
+      ]
+    },
+    {
+      "id": 94,
+      "course_code": "BCSE335L",
+      "course_name": "Healthcare Data Analytics",
+      "credits": 3,
+      "course_type": "Discipline Elective",
+      "is_mandatory": false,
+      "prerequisites": [
+        "BCSE208L"
+      ],
+      "unlocks": [],
+      "has_lab": false,
+      "year_offered": 3,
+      "difficulty": 66,
+      "pass_rate": 0.8,
+      "L": 3,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "E1",
+        "E2",
+        "F1",
+        "F2"
+      ]
+    },
+    {
+      "id": 95,
+      "course_code": "BCSE336L",
+      "course_name": "Financial Data Analytics",
+      "credits": 2,
+      "course_type": "Discipline Elective",
+      "is_mandatory": false,
+      "prerequisites": [
+        "BMAT202L"
+      ],
+      "unlocks": [],
+      "has_lab": true,
+      "lab_course_code": "BCSE336P",
+      "lab_credits": 1,
+      "year_offered": 3,
+      "difficulty": 65,
+      "pass_rate": 0.8,
+      "L": 2,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "G1",
+        "G2",
+        "A1",
+        "B1"
+      ]
+    },
+    {
+      "id": 96,
+      "course_code": "BCSE336P",
+      "course_name": "Financial Data Analytics Lab",
+      "credits": 1,
+      "course_type": "Discipline Elective",
+      "is_mandatory": false,
+      "prerequisites": [],
+      "unlocks": [],
+      "has_lab": false,
+      "is_lab": true,
+      "theory_course_code": "BCSE336L",
+      "year_offered": 3,
+      "difficulty": 59,
+      "pass_rate": 0.84,
+      "L": 0,
+      "T": 0,
+      "P": 2,
+      "J": 0,
+      "slots": [
+        "L61",
+        "L62",
+        "L63"
+      ]
+    },
+    {
+      "id": 97,
+      "course_code": "BCSE391J",
+      "course_name": "Technical Answers to Real Problems",
+      "credits": 3,
+      "course_type": "Discipline Elective",
+      "is_mandatory": false,
+      "prerequisites": [],
+      "unlocks": [],
+      "has_lab": false,
+      "is_project": true,
+      "year_offered": 3,
+      "difficulty": 65,
+      "pass_rate": 0.88,
+      "L": 0,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "PRJ"
+      ]
+    },
+    {
+      "id": 98,
+      "course_code": "BCSE392J",
+      "course_name": "Design Project",
+      "credits": 3,
+      "course_type": "Discipline Elective",
+      "is_mandatory": false,
+      "prerequisites": [],
+      "unlocks": [],
+      "has_lab": false,
+      "is_project": true,
+      "year_offered": 3,
+      "difficulty": 68,
+      "pass_rate": 0.86,
+      "L": 0,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "PRJ"
+      ]
+    },
+    {
+      "id": 99,
+      "course_code": "BCSE393J",
+      "course_name": "Laboratory Project",
+      "credits": 3,
+      "course_type": "Discipline Elective",
+      "is_mandatory": false,
+      "prerequisites": [],
+      "unlocks": [],
+      "has_lab": false,
+      "is_project": true,
+      "year_offered": 3,
+      "difficulty": 62,
+      "pass_rate": 0.89,
+      "L": 0,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "PRJ"
+      ]
+    },
+    {
+      "id": 100,
+      "course_code": "BCSE394J",
+      "course_name": "Product Development Project",
+      "credits": 3,
+      "course_type": "Discipline Elective",
+      "is_mandatory": false,
+      "prerequisites": [],
+      "unlocks": [],
+      "has_lab": false,
+      "is_project": true,
+      "year_offered": 3,
+      "difficulty": 70,
+      "pass_rate": 0.85,
+      "L": 0,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "PRJ"
+      ]
+    },
+    {
+      "id": 101,
+      "course_code": "BCSE396J",
+      "course_name": "Reading Course",
+      "credits": 3,
+      "course_type": "Discipline Elective",
+      "is_mandatory": false,
+      "prerequisites": [],
+      "unlocks": [],
+      "has_lab": false,
+      "is_project": true,
+      "year_offered": 3,
+      "difficulty": 60,
+      "pass_rate": 0.9,
+      "L": 0,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "PRJ"
+      ]
+    },
+    {
+      "id": 102,
+      "course_code": "BCSE397J",
+      "course_name": "Special Project",
+      "credits": 3,
+      "course_type": "Discipline Elective",
+      "is_mandatory": false,
+      "prerequisites": [],
+      "unlocks": [],
+      "has_lab": false,
+      "is_project": true,
+      "year_offered": 3,
+      "difficulty": 67,
+      "pass_rate": 0.87,
+      "L": 0,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "PRJ"
+      ]
+    },
+    {
+      "id": 103,
+      "course_code": "BCSE398J",
+      "course_name": "Simulation Project",
+      "credits": 3,
+      "course_type": "Discipline Elective",
+      "is_mandatory": false,
+      "prerequisites": [],
+      "unlocks": [],
+      "has_lab": false,
+      "is_project": true,
+      "year_offered": 3,
+      "difficulty": 64,
+      "pass_rate": 0.88,
+      "L": 0,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "PRJ"
+      ]
+    },
+    {
+      "id": 104,
+      "course_code": "BCSE401L",
+      "course_name": "Internet of Things",
+      "credits": 3,
+      "course_type": "Discipline Elective",
+      "is_mandatory": false,
+      "prerequisites": [
+        "BCSE305L"
+      ],
+      "unlocks": [],
+      "has_lab": false,
+      "year_offered": 4,
+      "difficulty": 67,
+      "pass_rate": 0.79,
+      "L": 3,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "A1",
+        "B1",
+        "C1",
+        "D1"
+      ]
+    },
+    {
+      "id": 105,
+      "course_code": "BCSE402L",
+      "course_name": "Big Data Analytics",
+      "credits": 3,
+      "course_type": "Discipline Elective",
+      "is_mandatory": false,
+      "prerequisites": [
+        "BCSE302L",
+        "BCSE209L"
+      ],
+      "unlocks": [],
+      "has_lab": false,
+      "year_offered": 4,
+      "difficulty": 72,
+      "pass_rate": 0.75,
+      "L": 3,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "E1",
+        "E2",
+        "F1",
+        "F2"
+      ]
+    },
+    {
+      "id": 106,
+      "course_code": "BCSE403L",
+      "course_name": "Digital Image Processing",
+      "credits": 3,
+      "course_type": "Discipline Elective",
+      "is_mandatory": false,
+      "prerequisites": [
+        "BCSE306L"
+      ],
+      "unlocks": [],
+      "has_lab": false,
+      "year_offered": 4,
+      "difficulty": 70,
+      "pass_rate": 0.76,
+      "L": 3,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "G1",
+        "G2",
+        "A1",
+        "B1"
+      ]
+    },
+    {
+      "id": 107,
+      "course_code": "BCSE404L",
+      "course_name": "Internet and Web Programming",
+      "credits": 3,
+      "course_type": "Discipline Elective",
+      "is_mandatory": false,
+      "prerequisites": [
+        "BCSE203E"
+      ],
+      "unlocks": [],
+      "has_lab": false,
+      "year_offered": 4,
+      "difficulty": 62,
+      "pass_rate": 0.82,
+      "L": 3,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "C1",
+        "C2",
+        "D1",
+        "D2"
+      ]
+    },
+    {
+      "id": 108,
+      "course_code": "BCSE405L",
+      "course_name": "Advanced Java Programming",
+      "credits": 3,
+      "course_type": "Discipline Elective",
+      "is_mandatory": false,
+      "prerequisites": [
+        "BCSE103E"
+      ],
+      "unlocks": [],
+      "has_lab": false,
+      "year_offered": 4,
+      "difficulty": 64,
+      "pass_rate": 0.81,
+      "L": 3,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "E1",
+        "E2",
+        "F1",
+        "F2"
+      ]
+    },
+    {
+      "id": 109,
+      "course_code": "BCSE406L",
+      "course_name": "NoSQL Databases",
+      "credits": 3,
+      "course_type": "Discipline Elective",
+      "is_mandatory": false,
+      "prerequisites": [
+        "BCSE302L"
+      ],
+      "unlocks": [],
+      "has_lab": false,
+      "year_offered": 4,
+      "difficulty": 66,
+      "pass_rate": 0.8,
+      "L": 3,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "G1",
+        "G2",
+        "A2",
+        "B2"
+      ]
+    },
+    {
+      "id": 110,
+      "course_code": "BCSE407L",
+      "course_name": "Computer Vision",
+      "credits": 3,
+      "course_type": "Discipline Elective",
+      "is_mandatory": false,
+      "prerequisites": [
+        "BCSE306L",
+        "BCSE209L"
+      ],
+      "unlocks": [],
+      "has_lab": false,
+      "year_offered": 4,
+      "difficulty": 74,
+      "pass_rate": 0.74,
+      "L": 3,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "A1",
+        "B1",
+        "C1",
+        "D1"
+      ]
+    },
+    {
+      "id": 111,
+      "course_code": "BCSE408L",
+      "course_name": "Cloud Computing",
+      "credits": 3,
+      "course_type": "Discipline Elective",
+      "is_mandatory": false,
+      "prerequisites": [
+        "BCSE308L"
+      ],
+      "unlocks": [],
+      "has_lab": false,
+      "year_offered": 4,
+      "difficulty": 68,
+      "pass_rate": 0.78,
+      "L": 3,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "E1",
+        "E2",
+        "F1",
+        "F2"
+      ]
+    },
+    {
+      "id": 112,
+      "course_code": "BCSE409L",
+      "course_name": "Natural Language Processing",
+      "credits": 3,
+      "course_type": "Discipline Elective",
+      "is_mandatory": false,
+      "prerequisites": [
+        "BCSE306L",
+        "BCSE209L"
+      ],
+      "unlocks": [],
+      "has_lab": false,
+      "year_offered": 4,
+      "difficulty": 73,
+      "pass_rate": 0.75,
+      "L": 3,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "G1",
+        "G2",
+        "A1",
+        "B1"
+      ]
+    },
+    {
+      "id": 113,
+      "course_code": "BCSE410L",
+      "course_name": "Cyber Security",
+      "credits": 3,
+      "course_type": "Discipline Elective",
+      "is_mandatory": false,
+      "prerequisites": [
+        "BCSE309L"
+      ],
+      "unlocks": [],
+      "has_lab": false,
+      "year_offered": 4,
+      "difficulty": 70,
+      "pass_rate": 0.77,
+      "L": 3,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "C1",
+        "C2",
+        "D1",
+        "D2"
+      ]
+    },
+    {
+      "id": 114,
+      "course_code": "BCSE411L",
+      "course_name": "Robotics and Automation",
+      "credits": 3,
+      "course_type": "Discipline Elective",
+      "is_mandatory": false,
+      "prerequisites": [
+        "BCSE306L"
+      ],
+      "unlocks": [],
+      "has_lab": false,
+      "year_offered": 4,
+      "difficulty": 69,
+      "pass_rate": 0.78,
+      "L": 3,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "E1",
+        "E2",
+        "F1",
+        "F2"
+      ]
+    },
+    {
+      "id": 115,
+      "course_code": "BCSE412L",
+      "course_name": "Parallel Computing",
+      "credits": 3,
+      "course_type": "Discipline Elective",
+      "is_mandatory": false,
+      "prerequisites": [
+        "BCSE303L"
+      ],
+      "unlocks": [],
+      "has_lab": false,
+      "year_offered": 4,
+      "difficulty": 71,
+      "pass_rate": 0.76,
+      "L": 3,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "G1",
+        "G2",
+        "A2",
+        "B2"
+      ]
+    },
+    {
+      "id": 116,
+      "course_code": "BCSE413L",
+      "course_name": "Soft Computing",
+      "credits": 3,
+      "course_type": "Discipline Elective",
+      "is_mandatory": false,
+      "prerequisites": [
+        "BCSE306L"
+      ],
+      "unlocks": [],
+      "has_lab": false,
+      "year_offered": 4,
+      "difficulty": 67,
+      "pass_rate": 0.79,
+      "L": 3,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "A1",
+        "B1",
+        "C1",
+        "D1"
+      ]
+    },
+    {
+      "id": 117,
+      "course_code": "BCSE414L",
+      "course_name": "High Performance Computing",
+      "credits": 3,
+      "course_type": "Discipline Elective",
+      "is_mandatory": false,
+      "prerequisites": [
+        "BCSE303L"
+      ],
+      "unlocks": [],
+      "has_lab": false,
+      "year_offered": 4,
+      "difficulty": 72,
+      "pass_rate": 0.75,
+      "L": 3,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "E1",
+        "E2",
+        "F1",
+        "F2"
+      ]
+    },
+    {
+      "id": 118,
+      "course_code": "BCSE431L",
+      "course_name": "Fundamentals of Quantum Computing",
+      "credits": 3,
+      "course_type": "Discipline Elective",
+      "is_mandatory": false,
+      "prerequisites": [
+        "BMAT201L"
+      ],
+      "unlocks": [],
+      "has_lab": false,
+      "year_offered": 4,
+      "difficulty": 76,
+      "pass_rate": 0.72,
+      "L": 3,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "G1",
+        "G2",
+        "A1",
+        "B1"
+      ]
+    },
+    {
+      "id": 119,
+      "course_code": "BEEE303L",
+      "course_name": "Control Systems",
+      "credits": 3,
+      "course_type": "Discipline Elective",
+      "is_mandatory": false,
+      "prerequisites": [],
+      "unlocks": [],
+      "has_lab": true,
+      "lab_course_code": "BEEE303P",
+      "lab_credits": 1,
+      "year_offered": 3,
+      "difficulty": 66,
+      "pass_rate": 0.79,
+      "L": 3,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "C1",
+        "C2",
+        "D1",
+        "D2"
+      ]
+    },
+    {
+      "id": 120,
+      "course_code": "BEEE303P",
+      "course_name": "Control Systems Lab",
+      "credits": 1,
+      "course_type": "Discipline Elective",
+      "is_mandatory": false,
+      "prerequisites": [],
+      "unlocks": [],
+      "has_lab": false,
+      "is_lab": true,
+      "theory_course_code": "BEEE303L",
+      "year_offered": 3,
+      "difficulty": 60,
+      "pass_rate": 0.83,
+      "L": 0,
+      "T": 0,
+      "P": 2,
+      "J": 0,
+      "slots": [
+        "L64",
+        "L65",
+        "L66"
+      ]
+    },
+    {
+      "id": 121,
+      "course_code": "BCSE399J",
+      "course_name": "Summer Industrial Internship",
+      "credits": 1,
+      "course_type": "Projects and Internship",
+      "is_mandatory": true,
+      "prerequisites": [
+        "BCSE301L"
+      ],
+      "unlocks": [],
+      "has_lab": false,
+      "is_project": true,
+      "year_offered": 3,
+      "difficulty": 50,
+      "pass_rate": 0.92,
+      "L": 0,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "INT"
+      ]
+    },
+    {
+      "id": 122,
+      "course_code": "BCSE497J",
+      "course_name": "Project - I",
+      "credits": 3,
+      "course_type": "Projects and Internship",
+      "is_mandatory": true,
+      "prerequisites": [
+        "BCSE301L"
+      ],
+      "unlocks": [],
+      "has_lab": false,
+      "is_project": true,
+      "year_offered": 4,
+      "difficulty": 65,
+      "pass_rate": 0.88,
+      "L": 0,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "CAP1"
+      ]
+    },
+    {
+      "id": 123,
+      "course_code": "BCSE498J",
+      "course_name": "Project - II / Internship",
+      "credits": 5,
+      "course_type": "Projects and Internship",
+      "is_mandatory": true,
+      "prerequisites": [
+        "BCSE497J"
+      ],
+      "unlocks": [],
+      "has_lab": false,
+      "is_project": true,
+      "year_offered": 4,
+      "difficulty": 70,
+      "pass_rate": 0.9,
+      "L": 0,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "CAP2"
+      ]
+    },
+    {
+      "id": 124,
+      "course_code": "BCSE499J",
+      "course_name": "One Semester Internship",
+      "credits": 14,
+      "course_type": "Projects and Internship",
+      "is_mandatory": true,
+      "prerequisites": [],
+      "unlocks": [],
+      "has_lab": false,
+      "is_project": true,
+      "year_offered": 4,
+      "difficulty": 75,
+      "pass_rate": 0.95,
+      "L": 0,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "INT-FULL"
+      ]
+    },
+    {
+      "id": 125,
+      "course_code": "BCSE355L",
+      "course_name": "AWS Solutions Architect",
+      "credits": 3,
+      "course_type": "Open Elective",
+      "is_mandatory": false,
+      "prerequisites": [],
+      "unlocks": [],
+      "has_lab": false,
+      "year_offered": 3,
+      "difficulty": 68,
+      "pass_rate": 0.8,
+      "L": 3,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "OE1",
+        "OE2",
+        "OE3",
+        "OE4"
+      ]
+    },
+    {
+      "id": 126,
+      "course_code": "BCHY102N",
+      "course_name": "Environmental Sciences",
+      "credits": 2,
+      "course_type": "Non-graded Core Requirement",
+      "is_mandatory": true,
+      "prerequisites": [],
+      "unlocks": [],
+      "has_lab": false,
+      "online_course": true,
+      "year_offered": 1,
+      "difficulty": 38,
+      "pass_rate": 0.94,
+      "L": 0,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "NGCR"
+      ]
+    },
+    {
+      "id": 127,
+      "course_code": "BCSE101N",
+      "course_name": "Introduction to Engineering",
+      "credits": 1,
+      "course_type": "Non-graded Core Requirement",
+      "is_mandatory": true,
+      "prerequisites": [],
+      "unlocks": [],
+      "has_lab": false,
+      "is_project": true,
+      "year_offered": 1,
+      "difficulty": 35,
+      "pass_rate": 0.95,
+      "L": 0,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "NGCR"
+      ]
+    },
+    {
+      "id": 128,
+      "course_code": "BEXC100N",
+      "course_name": "Extracurricular Activities / Co-Curricular Activities - B.Tech. Programmes",
+      "credits": 2,
+      "course_type": "Non-graded Core Requirement",
+      "is_mandatory": true,
+      "prerequisites": [],
+      "unlocks": [],
+      "has_lab": false,
+      "basket": true,
+      "year_offered": 1,
+      "difficulty": 30,
+      "pass_rate": 0.96,
+      "L": 0,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "NGCR"
+      ]
+    },
+    {
+      "id": 129,
+      "course_code": "BHUM101N",
+      "course_name": "Ethics and Values",
+      "credits": 2,
+      "course_type": "Non-graded Core Requirement",
+      "is_mandatory": true,
+      "prerequisites": [],
+      "unlocks": [],
+      "has_lab": false,
+      "online_course": true,
+      "year_offered": 1,
+      "difficulty": 36,
+      "pass_rate": 0.94,
+      "L": 0,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "NGCR"
+      ]
+    },
+    {
+      "id": 130,
+      "course_code": "BSSC101N",
+      "course_name": "Essence of Traditional Knowledge",
+      "credits": 2,
+      "course_type": "Non-graded Core Requirement",
+      "is_mandatory": true,
+      "prerequisites": [],
+      "unlocks": [],
+      "has_lab": false,
+      "online_course": true,
+      "year_offered": 2,
+      "difficulty": 37,
+      "pass_rate": 0.93,
+      "L": 0,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "NGCR"
+      ]
+    },
+    {
+      "id": 131,
+      "course_code": "BSSC102N",
+      "course_name": "Indian Constitution",
+      "credits": 2,
+      "course_type": "Non-graded Core Requirement",
+      "is_mandatory": true,
+      "prerequisites": [],
+      "unlocks": [],
+      "has_lab": false,
+      "online_course": true,
+      "year_offered": 2,
+      "difficulty": 39,
+      "pass_rate": 0.92,
+      "L": 0,
+      "T": 0,
+      "P": 0,
+      "J": 0,
+      "slots": [
+        "NGCR"
+      ]
+    }
+  ]
+}
