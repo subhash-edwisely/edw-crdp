@@ -37,7 +37,7 @@ PLAN_CONFIGS = {
         'description': 'Prioritize courses matching your passions and career goals',
         'weights': {
             'mandatory': 60,
-            'unlock': 40,
+            'unlock': 30,
             'interest': 150,
             'workload': 30,
             'failed': 200
@@ -660,9 +660,10 @@ class CoursePlanner:
         
 
         return penalty_vars
-
+    
+    
     def get_course_interest_weights_from_llm(self, student, courses):
-
+        
         # Build compact course list
         course_list = []
         for course_code in courses:
@@ -673,32 +674,16 @@ class CoursePlanner:
                 "type": course_info.get('course_type', 'Unknown')
             })
 
+        # print('coruse list : ', course_list)
         self._ui_log(f"🤖 AI analyzing {len(course_list)} courses against your interests and grade history...")
-
-        # Build grade pattern summary
-        grade_patterns = []
-        for record in student.course_records:
-            grade_patterns.append({
-                "course_code": record.course_code,
-                "course_name": record.course_name,
-                "grade": record.grade,
-                "credits": record.credits,
-                "semester": record.semester_taken,
-                "status": "Failed" if record.is_failed else "Passed"
-            })
         
         prompt = f"""You are an academic advisor analyzing course-interest alignment.
 
             TASK:
-            Rate how well each course matches the student's stated interests AND historical performance.
+            Rate how well each course matches the student's stated interests.
 
             STUDENT INTERESTS:
             {json.dumps(student.interest_areas, indent=2)}
-
-            STUDENT GRADE HISTORY:
-            {json.dumps(grade_patterns, indent=2)}
-
-            STUDENT CGPA: {student.cgpa}
 
             COURSES TO RATE:
             {json.dumps(course_list, indent=2)}
@@ -706,34 +691,49 @@ class CoursePlanner:
             RATING GUIDELINES:
 
             Score 0.9 - 1.0: Perfect Match
-            - Course directly matches student interests AND student has excelled in similar courses historically
+            - Course title/content directly mentions student's core interests
+            - Example: Student likes "Machine Learning" → Course is "Machine Learning Fundamentals"
 
             Score 0.7 - 0.8: Strong Match
-            - Course closely related to interests OR strong past performance in similar domain
+            - Course closely related to interests
+            - Example: Student likes "AI" → Course is "Neural Networks" or "Computer Vision"
 
             Score 0.5 - 0.6: Moderate Match
-            - Course somewhat related or student has average performance in similar courses
+            - Course somewhat related or complementary
+            - Example: Student likes "Web Development" → Course is "Database Systems"
 
             Score 0.3 - 0.4: Weak Match
-            - Course tangentially related AND/OR student has struggled in similar courses
+            - Course tangentially related or prerequisite to interests
+            - Example: Student likes "Cybersecurity" → Course is "Operating Systems"
 
             Score 0.0 - 0.2: No Match
-            - Course unrelated to interests AND student has no relevant performance history
-
-            SCORING RULES:
-            1. Primary factor: Interest alignment (70% weight in your judgment)
-            2. Secondary factor: Historical performance in similar courses (30% weight)
-            3. If student excelled in similar courses → boost score by up to 0.1
-            4. If student failed or struggled in similar courses → reduce score by up to 0.1
-            5. Reference specific past courses in your reason field
-            6. Use phrases like "Based on your strong performance in X (Grade: A), you are likely to excel here"
-            7. For failed courses being retaken → acknowledge it encouragingly
+            - Course unrelated to stated interests
+            - Example: Student likes "Software Engineering" → Course is "Analog Electronics"
 
             CRITICAL RULES:
-            1. Never penalize a student for failing a course they are required to retake
-            2. Ignore CGPA as a blanket score — look at domain-specific performance
-            3. Focus on course topic similarity when matching past performance
-            4. Be encouraging but honest in reasoning
+            1. Base scores ONLY on interest alignment, nothing else
+            2. Ignore student's CGPA, year, or past performance
+            3. Ignore course difficulty or workload
+            4. Ignore graduation requirements (mandatory/elective status)
+            5. Focus purely on: Does this course topic match what the student is interested in?
+
+            OUTPUT FORMAT (strict JSON):
+            {{
+            "courses": {{
+                {{
+                "code": "BCSE306L",
+                "name": "Artificial Intelligence",
+                "weight": 0.95,
+                "reason": "Directly matches core AI interest"
+                }},
+                {{
+                "code": "BCSE301L",
+                "name": "Software Engineering",
+                "weight": 0.60,
+                "reason": "Related to software development interest"
+                }}
+            }}
+            }}
 
             Rate ALL {len(course_list)} courses. Return ONLY valid JSON, no additional text."""
 
@@ -743,22 +743,22 @@ class CoursePlanner:
                 input=[
                     {
                         "role": "system",
-                        "content": """You are an expert academic advisor specializing in course-interest matching and student performance analysis.
+                        "content": """You are an expert academic advisor specializing in course-interest matching.
 
-                            Your ONLY job: Determine how well each course aligns with student's interests AND their historical academic performance.
+                            Your ONLY job: Determine how well each course aligns with student's stated interests.
 
                             You MUST:
-                            - Rate based on both interest-topic alignment and past performance patterns
-                            - Reference specific past courses and grades in your reasons
-                            - Be encouraging while being accurate
-                            - Use phrases like "Based on your A in Data Structures..." or "Given your strong performance in math courses..."
-                            - For failed course retakes, be supportive and focus on the opportunity to improve
+                            - Rate based purely on interest-topic alignment
+                            - Provide specific, concrete reasons
+                            - Be consistent in your scoring
+                            - Return valid JSON only
 
                             You MUST NOT:
-                            - Use overall CGPA as the only performance indicator
-                            - Penalize students for courses they are required to retake
-                            - Make assumptions beyond the data provided
-                            - Ignore the grade history when it's clearly relevant"""
+                            - Consider student's grades or performance
+                            - Consider course difficulty
+                            - Consider graduation requirements
+                            - Make assumptions beyond the interest areas provided
+                            - Hallucinate course content not in the course name/type"""
                     },
                     {
                         "role": "user",
@@ -769,9 +769,7 @@ class CoursePlanner:
             )
             
             parsed_output = response.output_parsed
-            
             self._ui_log(f"✅ AI analysis complete — {len(parsed_output.courses)} courses weighted")
-
             return parsed_output
             
         except json.JSONDecodeError as e:
@@ -781,7 +779,7 @@ class CoursePlanner:
         except Exception as e:
             print(f"✗ Error in LLM call: {e}")
             return None
-    
+
     def add_course_interest_soft_constraint(self, courses, llm_weights):
         print(llm_weights)
         weights_dict = dict()

@@ -19,8 +19,10 @@
     "BENG101L",
     "BENG101P",
     "BFLE200L",
+    "BMAT101L",
     "BMAT101P",
     "BPHY101L",
+    "BPHY101P",
     "BSTS101P",
     "BCSE103E",
     "BENG102P",
@@ -45,7 +47,7 @@
   ],
   
   "failed_courses": [
-    "BMAT101L", "BMAT201L", "BPHY101P"
+    "BMAT201L"
   ],
   
   "course_records": [
@@ -133,9 +135,9 @@
       "course_code": "BMAT101L",
       "course_name": "Calculus",
       "credits": 3,
-      "grade": "F",
+      "grade": "B",
       "semester_taken": 1,
-      "is_failed": true
+      "is_failed": false
     },
     {
       "course_code": "BMAT101P",
@@ -157,14 +159,14 @@
       "course_code": "BPHY101P",
       "course_name": "Engineering Physics Lab",
       "credits": 1,
-      "grade": "F",
+      "grade": "B",
       "semester_taken": 1,
-      "is_failed": true
+      "is_failed": false
     },
     {
       "course_code": "BSTS101P",
       "course_name": "Quantitative Skills Practice I",
-      "credits": 1.5,
+      "credits": 1,
       "grade": "S",
       "semester_taken": 1,
       "is_failed": false
@@ -196,7 +198,7 @@
     {
       "course_code": "BSTS102P",
       "course_name": "Quantitative Skills Practice II",
-      "credits": 1.5,
+      "credits": 1,
       "grade": "S",
       "semester_taken": 2,
       "is_failed": false
@@ -276,7 +278,7 @@
     {
       "course_code": "BSTS201P",
       "course_name": "Qualitative Skills Practice I",
-      "credits": 1.5,
+      "credits": 1,
       "grade": "S",
       "semester_taken": 3,
       "is_failed": false
@@ -332,7 +334,7 @@
     {
       "course_code": "BSTS202P",
       "course_name": "Qualitative Skills Practice II",
-      "credits": 1.5,
+      "credits": 1,
       "grade": "S",
       "semester_taken": 4,
       "is_failed": false
@@ -355,7 +357,7 @@
   "past_performance_trend": "recovering",
   
   "risk_tolerance": "very_low",
-  "workload_preference": "low",
+  "workload_preference": "high",
   "prioritize_gpa": true,
   "prioritize_learning": false
 }
