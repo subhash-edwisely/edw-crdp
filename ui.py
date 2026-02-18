@@ -817,8 +817,8 @@ with tab4:
     with col2:
         st.markdown("**Settings:**")
         st.write(f"• Workload: **{student.workload_preference or 'medium'}**")
-        st.write(f"• Priority: **{'GPA' if student.prioritize_gpa else 'Learning'}**")
-        st.write(f"• Risk Tolerance: **{student.risk_tolerance}**")
+        # st.write(f"• Priority: **{'GPA' if student.prioritize_gpa else 'Learning'}**")
+        # st.write(f"• Risk Tolerance: **{student.risk_tolerance}**")
     
     st.markdown("---")
     

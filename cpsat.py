@@ -814,7 +814,7 @@ class CoursePlanner:
         worload_penalty_total = sum(workload_penalties)
 
         interest_score = sum(
-            int(course_interest_weights_dict.get(c, (0.5, self.loader.get_course_by_code(c).get('course_name'), 'Default value set'))[0] * 100) * x[c, s] * (TOTAL_SEMS - s + 1)
+            course_interest_weights_dict.get(c, (0.5, self.loader.get_course_by_code(c).get('course_name'), 'Default value set'))[0] * x[c, s] * (TOTAL_SEMS - s + 1)
             for c in courses
             for s in semesters
         )
