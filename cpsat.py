@@ -27,7 +27,8 @@ PLAN_CONFIGS = {
             'mandatory': 100,
             'unlock': 30,
             'interest': 30,
-            'workload': 60
+            'workload': 60,
+            'failed': 200,
         },
     },
     
@@ -37,8 +38,9 @@ PLAN_CONFIGS = {
         'weights': {
             'mandatory': 60,
             'unlock': 40,
-            'interest': 120,
-            'workload': 60
+            'interest': 150,
+            'workload': 30,
+            'failed': 200
         },
     }
 }
@@ -86,7 +88,19 @@ class CoursePlanner:
         self.last_llm_weights = None
         self.last_plan_explanation = None
 
+    def set_ui_logger(self, callback):
+        """Streamlit passes a callback here to receive selected logs"""
+        self._ui_log_callback = callback
+
+    def _ui_log(self, message):
+        """Only these messages will show in Streamlit UI"""
+        if self._ui_log_callback:
+            self._ui_log_callback(message)
+        print(message)  # still prints to console too
+
     def generate_single_plan(self, student, eligible_courses, remaining_semesters, failed_courses, llm_weights, weights):
+        
+        self._ui_log("🔧 Building constraint model...")
         model = cp_model.CpModel()
         x = self._create_variables(model, eligible_courses, remaining_semesters)
         self.add_hard_constraints(model, x, student, eligible_courses, failed_courses, remaining_semesters)
@@ -110,7 +124,7 @@ class CoursePlanner:
         
         print(f"✅ Stored to self.last_llm_weights: {self.last_llm_weights is not None}")
         course_interest_weights_dict = self.add_course_interest_soft_constraint(eligible_courses, llm_weights)
-        self.set_objective(model, x, student, eligible_courses, remaining_semesters, workload_penalties, course_interest_weights_dict, weights)
+        self.set_objective(model, x, student, eligible_courses, remaining_semesters, failed_courses, workload_penalties, course_interest_weights_dict, weights)
         
         # print("\n=== CONSTRAINT DEBUG ===")
 
@@ -200,7 +214,7 @@ class CoursePlanner:
 
 
         solver = cp_model.CpSolver()
-        solver.parameters.max_time_in_seconds = 60.0
+        solver.parameters.max_time_in_seconds = 10.0
         solver.parameters.random_seed = 42
         solver.parameters.num_search_workers = 1
     
@@ -213,10 +227,21 @@ class CoursePlanner:
         solver.parameters.search_branching = cp_model.FIXED_SEARCH
         solver.parameters.linearization_level = 2
 
+
+        # solver.parameters.log_search_progress = True
+
+        self._ui_log("⚡ Running CP-SAT solver...")
         status = solver.Solve(model)
 
+        # for constraint in model.Proto().constraints:
+            # print('constraints : ', constraint)
+        
+        # solver.parameters.cp_model_presolve = True
+        # solver.parameters.find_multiple_cores = True 
+
+
         if status == cp_model.OPTIMAL:
-            print('Found optimal solution')
+            self._ui_log("✅ Found optimal solution!")
             plan = self.get_solution(solver, x, eligible_courses, remaining_semesters)
             self.print_plan(plan, student)
 
@@ -224,13 +249,16 @@ class CoursePlanner:
             print("\n" + "="*80)
             print("🤖 GENERATING PLAN EXPLANATIONS")
             print("="*80)
+            self._ui_log("🤖 Generating plan explanation with AI...")
             plan_explanation = self.generate_plan_explanation(student, plan, llm_weights, course_interest_weights_dict)
             self.last_plan_explanation = plan_explanation
             print("✅ Explanations generated successfully")
+            self._ui_log("✅ Plan explanation ready!")
 
             return plan, plan_explanation
         elif status == cp_model.FEASIBLE:
             print('Found feasible solution')
+            self._ui_log("✅ Found feasible solution!")
             plan = self.get_solution(solver, x, eligible_courses, remaining_semesters)
             self.print_plan(plan, student)
             
@@ -238,14 +266,21 @@ class CoursePlanner:
             print("\n" + "="*80)
             print("🤖 GENERATING PLAN EXPLANATIONS")
             print("="*80)
+            self._ui_log("🤖 Generating plan explanation with AI...")
             plan_explanation = self.generate_plan_explanation(student, plan, llm_weights, course_interest_weights_dict)
             self.last_plan_explanation = plan_explanation
             print("✅ Explanations generated successfully")
+            self._ui_log("✅ Plan explanation ready!")
             
             return plan, plan_explanation
         else:
             print('No solution found')
+            self._ui_log("❌ No solution found — diagnosing issue...")
             print('Status :', solver.StatusName(status))
+            reasons = self.diagnose_infeasibility(student, eligible_courses, failed_courses, remaining_semesters)
+            print("🔍 Infeasibility reasons:")
+            for r in reasons:
+                print(f"  ❌ {r}")
             return {sem: [] for sem in remaining_semesters}, None
 
 
@@ -364,7 +399,7 @@ class CoursePlanner:
                 weights=config['weights'],
             )
             
-            if plan and explanation:
+            if plan and any(plan.values()) and explanation:
                 
                 results[plan_type] = {
                     'config': config,
@@ -378,7 +413,7 @@ class CoursePlanner:
                 print(f"\n❌ {config['name']} failed to generate")
         
         print("\n" + "="*80)
-        print(f"✅ Generated {len(results)}/3 plans successfully")
+        print(f"✅ Generated {len(results)}/2 plans successfully")
         print("="*80 + "\n")
         
         return results
@@ -429,6 +464,11 @@ class CoursePlanner:
                 for preq in preqs:
                     if preq in completed:
                         continue
+
+                    if preq not in courses:
+                        print('Prerequisite not in completed and also it is not in eligible course pool')   
+                        model.add(1 == 0)
+                        continue
                     
                     past_sems = [s for s in semesters if s < sem]
 
@@ -436,6 +476,8 @@ class CoursePlanner:
                         model.add(x[course, sem] == 0)
 
                     if past_sems and preq in courses:
+
+                        # a constraint telling the solver to only consider the current course in this current sem only if its preq are satisfied in previous sems
                         model.add(
                             x[course, sem] <= sum(x[preq, s] for s in past_sems)
                         )
@@ -460,11 +502,12 @@ class CoursePlanner:
             
             break
 
-    def add_theory_lab_pairing_constraint(self, model, x, courses, semesters):
+    def add_theory_lab_pairing_constraint(self, model, x, student, courses, semesters):
+        completed = set(student.completed_courses)
         for course in courses:
             if self.loader.get_lab_course(course):
                 lab = self.loader.get_lab_course(course)
-                if lab and lab in courses:
+                if lab and lab in courses and lab not in completed:
                     for sem in semesters:
                         model.add(x[course, sem] == x[lab, sem])
     
@@ -534,8 +577,7 @@ class CoursePlanner:
                     if(sem < 7):
                         model.add(x[course, sem] == 0)
     
-    def add_failed_courses_immediate_retake_constraint(self, model, x, failed_courses, semesters):
-        current_semester = semesters[0]
+    def add_failed_courses_retake_constraint(self, model, x, failed_courses, semesters):
         for c in failed_courses:
             model.add(sum(x[c, s] for s in semesters) == 1)
 
@@ -543,7 +585,7 @@ class CoursePlanner:
         completed = student.completed_courses
         credits_earned_so_far = round(sum([self.loader.get_credits(c) for c in completed]))
         min_credits_required = TOTAL_MIN_CREDITS_FOR_GRAD_FROM_SEM_ONE - credits_earned_so_far
-        print('eyuyuyuyuyu : ', TOTAL_MIN_CREDITS_FOR_GRAD_FROM_SEM_ONE, credits_earned_so_far, min_credits_required, [self.loader.get_credits(c) for c in completed])
+        # print('eyuyuyuyuyu : ', TOTAL_MIN_CREDITS_FOR_GRAD_FROM_SEM_ONE, credits_earned_so_far, min_credits_required, [self.loader.get_credits(c) for c in completed])
         model.add(
             sum(
                 self.loader.get_credits(c) * x[c, s]
@@ -574,8 +616,8 @@ class CoursePlanner:
         self.add_preq_check_constraint(model, x, student, eligible_courses, remaining_semesters)
         self.add_project_constraint(model, x, eligible_courses, remaining_semesters)
         self.add_slot_conflict_constraint(model, x, eligible_courses, remaining_semesters)
-        self.add_theory_lab_pairing_constraint(model, x, eligible_courses, remaining_semesters)  
-        self.add_failed_courses_immediate_retake_constraint(model, x, failed_courses, remaining_semesters)
+        self.add_theory_lab_pairing_constraint(model, x, student, eligible_courses, remaining_semesters)  
+        self.add_failed_courses_retake_constraint(model, x, failed_courses, remaining_semesters)
         self.add_total_min_credits_req_for_graduation(model, x, student, eligible_courses, remaining_semesters)
         self.add_year_level_course_unlock_constraint(model, x, eligible_courses, remaining_semesters)
         self.add_max_allowed_courses_per_semester(model, x, eligible_courses, remaining_semesters)
@@ -620,7 +662,7 @@ class CoursePlanner:
         return penalty_vars
 
     def get_course_interest_weights_from_llm(self, student, courses):
-        
+
         # Build compact course list
         course_list = []
         for course_code in courses:
@@ -631,15 +673,32 @@ class CoursePlanner:
                 "type": course_info.get('course_type', 'Unknown')
             })
 
-        # print('coruse list : ', course_list)
+        self._ui_log(f"🤖 AI analyzing {len(course_list)} courses against your interests and grade history...")
+
+        # Build grade pattern summary
+        grade_patterns = []
+        for record in student.course_records:
+            grade_patterns.append({
+                "course_code": record.course_code,
+                "course_name": record.course_name,
+                "grade": record.grade,
+                "credits": record.credits,
+                "semester": record.semester_taken,
+                "status": "Failed" if record.is_failed else "Passed"
+            })
         
         prompt = f"""You are an academic advisor analyzing course-interest alignment.
 
             TASK:
-            Rate how well each course matches the student's stated interests.
+            Rate how well each course matches the student's stated interests AND historical performance.
 
             STUDENT INTERESTS:
             {json.dumps(student.interest_areas, indent=2)}
+
+            STUDENT GRADE HISTORY:
+            {json.dumps(grade_patterns, indent=2)}
+
+            STUDENT CGPA: {student.cgpa}
 
             COURSES TO RATE:
             {json.dumps(course_list, indent=2)}
@@ -647,49 +706,34 @@ class CoursePlanner:
             RATING GUIDELINES:
 
             Score 0.9 - 1.0: Perfect Match
-            - Course title/content directly mentions student's core interests
-            - Example: Student likes "Machine Learning" → Course is "Machine Learning Fundamentals"
+            - Course directly matches student interests AND student has excelled in similar courses historically
 
             Score 0.7 - 0.8: Strong Match
-            - Course closely related to interests
-            - Example: Student likes "AI" → Course is "Neural Networks" or "Computer Vision"
+            - Course closely related to interests OR strong past performance in similar domain
 
             Score 0.5 - 0.6: Moderate Match
-            - Course somewhat related or complementary
-            - Example: Student likes "Web Development" → Course is "Database Systems"
+            - Course somewhat related or student has average performance in similar courses
 
             Score 0.3 - 0.4: Weak Match
-            - Course tangentially related or prerequisite to interests
-            - Example: Student likes "Cybersecurity" → Course is "Operating Systems"
+            - Course tangentially related AND/OR student has struggled in similar courses
 
             Score 0.0 - 0.2: No Match
-            - Course unrelated to stated interests
-            - Example: Student likes "Software Engineering" → Course is "Analog Electronics"
+            - Course unrelated to interests AND student has no relevant performance history
+
+            SCORING RULES:
+            1. Primary factor: Interest alignment (70% weight in your judgment)
+            2. Secondary factor: Historical performance in similar courses (30% weight)
+            3. If student excelled in similar courses → boost score by up to 0.1
+            4. If student failed or struggled in similar courses → reduce score by up to 0.1
+            5. Reference specific past courses in your reason field
+            6. Use phrases like "Based on your strong performance in X (Grade: A), you are likely to excel here"
+            7. For failed courses being retaken → acknowledge it encouragingly
 
             CRITICAL RULES:
-            1. Base scores ONLY on interest alignment, nothing else
-            2. Ignore student's CGPA, year, or past performance
-            3. Ignore course difficulty or workload
-            4. Ignore graduation requirements (mandatory/elective status)
-            5. Focus purely on: Does this course topic match what the student is interested in?
-
-            OUTPUT FORMAT (strict JSON):
-            {{
-            "courses": {{
-                {{
-                "code": "BCSE306L",
-                "name": "Artificial Intelligence",
-                "weight": 0.95,
-                "reason": "Directly matches core AI interest"
-                }},
-                {{
-                "code": "BCSE301L",
-                "name": "Software Engineering",
-                "weight": 0.60,
-                "reason": "Related to software development interest"
-                }}
-            }}
-            }}
+            1. Never penalize a student for failing a course they are required to retake
+            2. Ignore CGPA as a blanket score — look at domain-specific performance
+            3. Focus on course topic similarity when matching past performance
+            4. Be encouraging but honest in reasoning
 
             Rate ALL {len(course_list)} courses. Return ONLY valid JSON, no additional text."""
 
@@ -699,22 +743,22 @@ class CoursePlanner:
                 input=[
                     {
                         "role": "system",
-                        "content": """You are an expert academic advisor specializing in course-interest matching.
+                        "content": """You are an expert academic advisor specializing in course-interest matching and student performance analysis.
 
-                            Your ONLY job: Determine how well each course aligns with student's stated interests.
+                            Your ONLY job: Determine how well each course aligns with student's interests AND their historical academic performance.
 
                             You MUST:
-                            - Rate based purely on interest-topic alignment
-                            - Provide specific, concrete reasons
-                            - Be consistent in your scoring
-                            - Return valid JSON only
+                            - Rate based on both interest-topic alignment and past performance patterns
+                            - Reference specific past courses and grades in your reasons
+                            - Be encouraging while being accurate
+                            - Use phrases like "Based on your A in Data Structures..." or "Given your strong performance in math courses..."
+                            - For failed course retakes, be supportive and focus on the opportunity to improve
 
                             You MUST NOT:
-                            - Consider student's grades or performance
-                            - Consider course difficulty
-                            - Consider graduation requirements
-                            - Make assumptions beyond the interest areas provided
-                            - Hallucinate course content not in the course name/type"""
+                            - Use overall CGPA as the only performance indicator
+                            - Penalize students for courses they are required to retake
+                            - Make assumptions beyond the data provided
+                            - Ignore the grade history when it's clearly relevant"""
                     },
                     {
                         "role": "user",
@@ -726,6 +770,8 @@ class CoursePlanner:
             
             parsed_output = response.output_parsed
             
+            self._ui_log(f"✅ AI analysis complete — {len(parsed_output.courses)} courses weighted")
+
             return parsed_output
             
         except json.JSONDecodeError as e:
@@ -754,7 +800,7 @@ class CoursePlanner:
         return weights_dict
 
 
-    def set_objective(self, model, x, student, courses, semesters, workload_penalties, course_interest_weights_dict, weights):
+    def set_objective(self, model, x, student, courses, semesters, failed_courses, workload_penalties, course_interest_weights_dict, weights):
         mandatory_courses = self.loader.get_remaining_mandatory_courses(student)
         mandatory_score = sum(
             x[c, s] * (TOTAL_SEMS - s + 1)
@@ -770,15 +816,25 @@ class CoursePlanner:
         worload_penalty_total = sum(workload_penalties)
 
         interest_score = sum(
-            course_interest_weights_dict.get(c, (0.5, self.loader.get_course_by_code(c).get('course_name'), 'Default value set'))[0] * x[c, s] * (TOTAL_SEMS - s + 1)
+            int(course_interest_weights_dict.get(c, (0.5, self.loader.get_course_by_code(c).get('course_name'), 'Default value set'))[0] * 100) * x[c, s] * (TOTAL_SEMS - s + 1)
             for c in courses
             for s in semesters
         )
+
+
+        failed_course_urgency_score = sum(
+            (TOTAL_SEMS - s + 1) * x[c, s]
+            for c in failed_courses if c in courses
+            for s in semesters
+        )
+
+
 
         w_mandatory = weights.get('mandatory', 100)
         w_unlock = weights.get('unlock', 30)
         w_interest = weights.get('interest', 30)
         w_workload = weights.get('workload', 60)
+        w_failed = weights.get('failed', 200)
 
 
         model.maximize(
@@ -787,6 +843,8 @@ class CoursePlanner:
             w_unlock * unlock_score
             +
             w_interest * interest_score
+            +
+            w_failed * failed_course_urgency_score
             -
             w_workload * worload_penalty_total
         )
@@ -994,6 +1052,8 @@ class CoursePlanner:
         Generate comprehensive explanations for why each course was selected 
         and why it was placed in a specific semester using LLM.
         """
+
+        self._ui_log("📝 Generating personalized course explanations...")
         
         # Prepare context data
         student_context = {
@@ -1215,6 +1275,7 @@ class CoursePlanner:
             
             explanation = response.output_parsed
             
+            self._ui_log(f"✅ Explanations ready for {len(explanation.semesters)} semesters")
             print(f"✅ Generated explanations for {len(explanation.semesters)} semesters")
             for sem_exp in explanation.semesters:
                 print(f"   Semester {sem_exp.semester}: {len(sem_exp.courses)} courses explained")
@@ -1233,6 +1294,63 @@ class CoursePlanner:
             traceback.print_exc()
             return None
 
+
+
+
+
+    def diagnose_infeasibility(self, student, eligible_courses, failed_courses, remaining_semesters):
+        """Run constraint isolation to identify what's causing infeasibility"""
+        
+        reasons = []
+        
+        def quick_solve(add_constraints_fn):
+            m = cp_model.CpModel()
+            x = self._create_variables(m, eligible_courses, remaining_semesters)
+            add_constraints_fn(m, x)
+            s = cp_model.CpSolver()
+            s.parameters.max_time_in_seconds = 5.0
+            return s.Solve(m) in [cp_model.OPTIMAL, cp_model.FEASIBLE]
+
+        # Check 1: Credits alone
+        if not quick_solve(lambda m, x: self.add_min_max_credit_constraint(m, x, eligible_courses, remaining_semesters)):
+            reasons.append("Not enough courses available to meet minimum credit requirements per semester")
+            return reasons
+
+        # Check 2: + Failed courses retake
+        def check2(m, x):
+            self.add_min_max_credit_constraint(m, x, eligible_courses, remaining_semesters)
+            self.add_course_can_be_taken_only_once_constraint(m, x, eligible_courses, remaining_semesters)
+            self.add_failed_courses_retake_constraint(m, x, failed_courses, remaining_semesters)
+        if not quick_solve(check2):
+            reasons.append(f"Failed courses {list(failed_courses)} cannot be accommodated within credit limits")
+            return reasons
+
+        # Check 3: + Prerequisites
+        def check3(m, x):
+            check2(m, x)
+            self.add_preq_check_constraint(m, x, student, eligible_courses, remaining_semesters)
+        if not quick_solve(check3):
+            reasons.append("Prerequisite chain constraints make scheduling impossible — possible failed course whose prereq is also failed")
+            return reasons
+
+        # Check 4: + Category requirements
+        def check4(m, x):
+            check3(m, x)
+            self.add_category_credit_requirement_constraint(m, x, student, eligible_courses, remaining_semesters)
+        if not quick_solve(check4):
+            reasons.append("Category credit requirements cannot be satisfied with available courses in remaining semesters")
+            return reasons
+
+        # Check 5: + Graduation credits
+        def check5(m, x):
+            check4(m, x)
+            self.add_total_min_credits_req_for_graduation(m, x, student, eligible_courses, remaining_semesters)
+        if not quick_solve(check5):
+            reasons.append("Total credits required for graduation cannot be achieved in remaining semesters")
+            return reasons
+
+        reasons.append("Combination of all constraints together is infeasible — likely slot conflicts or theory-lab pairing conflicts")
+        return reasons
 
 
 

@@ -19,10 +19,8 @@
     "BENG101L",
     "BENG101P",
     "BFLE200L",
-    "BMAT101L",
     "BMAT101P",
     "BPHY101L",
-    "BPHY101P",
     "BSTS101P",
     "BCSE103E",
     "BENG102P",
@@ -47,7 +45,7 @@
   ],
   
   "failed_courses": [
-    "BMAT201L"
+    "BMAT101L", "BMAT201L", "BPHY101P"
   ],
   
   "course_records": [
@@ -135,9 +133,9 @@
       "course_code": "BMAT101L",
       "course_name": "Calculus",
       "credits": 3,
-      "grade": "B",
+      "grade": "F",
       "semester_taken": 1,
-      "is_failed": false
+      "is_failed": true
     },
     {
       "course_code": "BMAT101P",
@@ -159,9 +157,9 @@
       "course_code": "BPHY101P",
       "course_name": "Engineering Physics Lab",
       "credits": 1,
-      "grade": "B",
+      "grade": "F",
       "semester_taken": 1,
-      "is_failed": false
+      "is_failed": true
     },
     {
       "course_code": "BSTS101P",

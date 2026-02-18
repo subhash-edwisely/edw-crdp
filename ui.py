@@ -428,9 +428,9 @@ with tab1:
             student.workload_preference = selected_workload
             st.success("✅ Workload preference updated!")
         
-        st.markdown("**Other Preferences**")
-        st.info(f"🎯 Priority: {'GPA' if student.prioritize_gpa else 'Learning'}")
-        st.info(f"⚠️ Risk Tolerance: {student.risk_tolerance}")
+        # st.markdown("**Other Preferences**")
+        # st.info(f"🎯 Priority: {'GPA' if student.prioritize_gpa else 'Learning'}")
+        # st.info(f"⚠️ Risk Tolerance: {student.risk_tolerance}")
 
 # ============================================================================
 # TAB 2: COURSE CATALOG
@@ -603,9 +603,9 @@ with tab3:
         },
         {
             "name": "Failed Course Retake",
-            "description": "Failed courses must be retaken in one of the remaining semesters",
+            "description": "Failed courses must be retaken exactly once across remaining semesters",
             "formula": "Σ(failed_course_in_remaining_sems) = 1",
-            "rationale": "Must clear failed courses for graduation"
+            "rationale": "Must clear failed courses for graduation — urgency handled via objective function to schedule as early as constraints allow"
         },
         {
             "name": "Year Level Unlocking",
@@ -708,13 +708,14 @@ with tab3:
             st.markdown(f"### {emoji} {config['name']}")
             st.write(f"**Description:** {config['description']}")
             
-            # Display weights
             weights = config['weights']
+            # Display weights
             st.code(f"""Weights Configuration:
-• Mandatory Score Weight:  {weights['mandatory']}
-• Unlock Score Weight:     {weights['unlock']}
-• Interest Score Weight:   {weights['interest']}
-• Workload Penalty Weight: {weights['workload']}""", language='text')
+                - Mandatory Score Weight:     {weights['mandatory']}
+                - Unlock Score Weight:        {weights['unlock']}
+                - Interest Score Weight:      {weights['interest']}
+                - Workload Penalty Weight:    {weights['workload']}
+                - Failed Course Urgency Weight: {weights.get('failed', 200)}""", language='text')
             
             # Explanation of what this means
             if 'balanced' in plan_type:
@@ -738,20 +739,23 @@ with tab3:
     weight_examples = []
     for plan_type, config in PLAN_CONFIGS.items():
         w = config['weights']
-        weight_examples.append(f"    {config['name']:20s} w_mandatory={w['mandatory']}, w_unlock={w['unlock']}, w_interest={w['interest']}, w_workload={w['workload']}")
+        weight_examples.append(f"    {config['name']:20s} w_mandatory={w['mandatory']}, w_unlock={w['unlock']}, w_interest={w['interest']}, w_workload={w['workload']}, w_failed={w['failed']}")
     
     st.code(f"""
 Maximize:
     w_mandatory × (mandatory_score)      # Complete mandatory courses early
   + w_unlock × (unlock_score)            # Take prerequisite courses early
   + w_interest × (interest_score)        # Align with your interests
+  + w_failed × (failed_course_urgency_score)    # Retake failed courses ASAP
   - w_workload × (workload_penalty)      # Balance workload per preference
 
 Where:
     mandatory_score = Σ(mandatory_course × (9 - semester))
     unlock_score = Σ(num_unlocked_courses × course_taken × (9 - semester))
     interest_score = Σ(LLM_weight × course_taken × (9 - semester))
+    failed_course_urgency_score = Σ(failed_course * (8 - semester + 1))
     workload_penalty = Σ(deviation from target credits per semester)
+    
     
 Weights vary by plan type:
 {chr(10).join(weight_examples)}
@@ -854,79 +858,71 @@ with tab4:
     # Generate button
     if st.button(f"🚀 Generate All {num_plans} Plans", type="primary", use_container_width=True):
         progress_bar = st.progress(0, text="🔄 Starting optimization...")
-        status_placeholder = st.empty()
         
+        # Live log area
+        st.markdown("### 📡 Live Progress")
+        log_placeholder = st.empty()
+        log_lines = []
+
+        def ui_logger(message):
+            log_lines.append(message)
+            # Show last 8 lines so it scrolls naturally
+            log_placeholder.code("\n".join(log_lines[-8:]), language=None)
+
+        # Attach logger to planner
+        planner.set_ui_logger(ui_logger)
+
         try:
-            # Phase 1: Setup
             progress_bar.progress(5, text="📚 Analyzing eligible courses...")
-            status_placeholder.info("🔍 Identifying eligible courses based on prerequisites and completed courses...")
+            ui_logger("📚 Loading eligible courses...")
             
-            # Get eligible courses
             remaining_semesters = list(range(student.current_semester, 9))
             eligible_courses, failed_courses = planner.get_eligible_and_failed_courses(student)
-            
-            progress_bar.progress(10, text=f"✅ Found {len(eligible_courses)} eligible courses")
-            
-            # Phase 2: LLM Weights Generation
+            ui_logger(f"✅ Found {len(eligible_courses)} eligible courses, {len(failed_courses)} failed courses to retake")
+
             progress_bar.progress(15, text="🤖 Generating AI interest weights...")
-            status_placeholder.warning(f"⏳ **LLM Analysis in Progress**\n\nGPT-4 is analyzing {len(eligible_courses)} courses against your interests:\n- {', '.join(student.interest_areas[:3])}{'...' if len(student.interest_areas) > 3 else ''}\n\nThis typically takes 30-60 seconds...")
-            
-            # Call LLM for weights (THIS IS THE REAL OPERATION)
             llm_weights = planner.get_course_interest_weights_from_llm(student, eligible_courses)
-            
-            # Store LLM weights
+
             if llm_weights:
                 st.session_state.llm_weights = llm_weights
                 progress_bar.progress(30, text="✅ Interest weights generated!")
-                status_placeholder.success(f"✅ **AI Analysis Complete**\n\nSuccessfully analyzed {len(llm_weights.courses)} courses with interest weights.")
-            
-            # Phase 3-N: Generate each plan dynamically
+
             all_plans = {}
-            plan_count = 0
             total_plans = len(PLAN_CONFIGS)
-            
+
             for idx, (plan_type, config) in enumerate(PLAN_CONFIGS.items(), 1):
-                # Calculate progress percentages
                 start_progress = 30 + (idx - 1) * (60 // total_plans)
                 end_progress = 30 + idx * (60 // total_plans)
-                
-                # Determine emoji
+
                 if 'balanced' in plan_type:
                     emoji = "⚖️"
                 elif 'graduation' in plan_type:
                     emoji = "🎓"
                 else:
                     emoji = "❤️"
-                
-                progress_bar.progress(start_progress, text=f"{emoji} Plan {idx}/{total_plans}: Solving {config['name']}...")
-                status_placeholder.info(f"🔧 **CP-SAT Solver Running: {config['name']}**\n\nBuilding constraint model and searching for optimal solution...\n- Mandatory weight: {config['weights']['mandatory']}\n- Unlock weight: {config['weights']['unlock']}\n- Interest weight: {config['weights']['interest']}\n- Workload penalty: {config['weights']['workload']}")
-                
-                # THIS IS THE REAL CP-SAT SOLVING
+
+                progress_bar.progress(start_progress, text=f"{emoji} Generating {config['name']}...")
+                ui_logger(f"\n{'='*40}")
+                ui_logger(f"{emoji} Starting: {config['name']}")
+                ui_logger(f"{'='*40}")
+
                 plan, explanation = planner.generate_single_plan(
-                    student, 
-                    eligible_courses, 
-                    remaining_semesters, 
-                    failed_courses, 
-                    llm_weights, 
-                    weights=config['weights']
+                    student, eligible_courses, remaining_semesters,
+                    failed_courses, llm_weights, weights=config['weights']
                 )
-                
-                if plan:
-                    total_courses = sum(len(courses) for courses in plan.values())
-                    progress_bar.progress(end_progress, text=f"✅ {config['name']} solved!")
-                    status_placeholder.success(f"✅ **{config['name']} Complete**\n\nGenerated schedule with {total_courses} courses.")
-                    
-                    all_plans[plan_type] = {
-                        'config': config,
-                        'plan': plan,
-                        'explanation': explanation
-                    }
-                    plan_count += 1
-            
+
+                if plan and any(plan.values()):
+                    total_courses = sum(len(c) for c in plan.values())
+                    total_credits = sum(sum(loader.get_credits(c) for c in courses) for courses in plan.values())
+                    ui_logger(f"✅ {config['name']} complete — {total_courses} courses, {total_credits} credits")
+                    progress_bar.progress(end_progress, text=f"✅ {config['name']} done!")
+                    all_plans[plan_type] = {'config': config, 'plan': plan, 'explanation': explanation}
+
             progress_bar.progress(100, text="✅ All plans generated!")
-            status_placeholder.success(f"🎉 **Generation Complete!**\n\nSuccessfully generated {plan_count} optimized course plans with detailed AI explanations.")
-            
+            ui_logger("\n🎉 All plans generated successfully!")
             st.session_state.all_plans = all_plans
+
+            # ... rest of success/failure handling
             
             # Success message
             if all_plans and len(all_plans) > 0:
@@ -966,10 +962,25 @@ with tab4:
                 st.markdown("### ⚠️ No Feasible Plans Found")
                 st.markdown("The constraints might be too restrictive. Try adjusting your preferences or check your completed courses.")
                 st.markdown('</div>', unsafe_allow_html=True)
-            
+
+                # Run diagnosis and show reasons
+                with st.spinner("🔍 Diagnosing the issue..."):
+                    reasons = planner.diagnose_infeasibility(
+                        student,
+                        eligible_courses,
+                        failed_courses,
+                        remaining_semesters
+                    )
+                
+                for reason in reasons:
+                    st.error(f"❌ {reason}")
+                
+                st.info("💡 **Suggestions:** Contact your academic advisor or review your failed courses and prerequisite chains.")
+                        
+
         except Exception as e:
             progress_bar.empty()
-            status_placeholder.empty()
+            # status_placeholder.empty()
             st.error(f"❌ Error generating plans: {str(e)}")
             with st.expander("🔍 View Error Details"):
                 st.exception(e)
@@ -1128,7 +1139,22 @@ with tab5:
     
     # Check if plan has courses
     if not any(len(courses) > 0 for courses in plan.values()):
-        st.warning("⚠️ No courses were scheduled. The problem might be infeasible with current constraints.")
+        st.warning("⚠️ No courses were scheduled for this plan.")
+        
+        with st.spinner("🔍 Diagnosing the issue..."):
+            eligible_courses, failed_courses = planner.get_eligible_and_failed_courses(student)
+            remaining_semesters = list(range(student.current_semester, 9))
+            reasons = planner.diagnose_infeasibility(
+                student,
+                eligible_courses,
+                failed_courses,
+                remaining_semesters
+            )
+        
+        for reason in reasons:
+            st.error(f"❌ {reason}")
+        
+        st.info("💡 **Suggestions:** Contact your academic advisor or review your failed courses and prerequisite chains.")
         st.stop()
     
     # Summary metrics
