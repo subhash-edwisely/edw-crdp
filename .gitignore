@@ -1,3 +1,5 @@
 .env
 .venv
 hanuman.py
+cpsat_with_diversity.py
+data/21BCE0042.json

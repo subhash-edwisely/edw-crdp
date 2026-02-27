@@ -1,0 +1,39 @@
+{
+  "student_id": "21BCE0055",
+  "name": "Subhash",
+  "email": "subhash.v2021@vitstudent.ac.in",
+  "program": "B.Tech Computer Science and Engineering",
+
+  "current_year": 1,
+  "current_semester": 1,
+  "cgpa": 0.00,
+
+  "completed_courses": [],
+
+  "failed_courses": [],
+
+  "course_records": [],
+
+  "semester_summary": [],
+
+  "interest_areas": [
+    "Machine learning",
+    "Software Eng.",
+    "Chemistry"
+  ],
+
+  "preferred_credits_per_semester": 18,
+  "max_credits_per_semester": 22,
+  "preferred_difficulty_level": "easy",
+
+  "has_backlogs": false,
+  "avoid_courses": [],
+
+  "past_performance_trend": "new_joinee",
+
+  "risk_tolerance": "very_low",
+  "workload_preference": "medium",
+  "difficulty_preference": "medium",
+  "prioritize_gpa": true,
+  "prioritize_learning": true
+}

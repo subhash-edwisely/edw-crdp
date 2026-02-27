@@ -3,11 +3,11 @@
   "name": "Arjun Patel",
   "email": "arjun.patel2021@vitstudent.ac.in",
   "program": "B.Tech Computer Science and Engineering",
-  
+
   "current_year": 4,
   "current_semester": 7,
-  "cgpa": 7.23,
-  
+  "cgpa": 8.01,
+
   "completed_courses": [
     "BCHY101L",
     "BCHY101P",
@@ -66,18 +66,20 @@
     "BCSE309L",
     "BCSE309P"
   ],
-  
+
   "failed_courses": [
     "BCSE208L",
     "BCSE208P"
   ],
-  
+
   "course_records": [
     {
       "course_code": "BCHY101L",
       "course_name": "Engineering Chemistry",
       "credits": 3,
       "grade": "B",
+      "grade_points": 8,
+      "credit_points": 24,
       "semester_taken": 1,
       "is_failed": false
     },
@@ -85,15 +87,20 @@
       "course_code": "BCHY101P",
       "course_name": "Engineering Chemistry Lab",
       "credits": 1,
-      "grade": "B+",
+      "grade": "B",
+      "grade_points": 8,
+      "credit_points": 8,
       "semester_taken": 1,
-      "is_failed": false
+      "is_failed": false,
+      "note": "Grade corrected from B+ to B"
     },
     {
       "course_code": "BCSE101E",
       "course_name": "Computer Programming: Python",
       "credits": 3,
       "grade": "A",
+      "grade_points": 9,
+      "credit_points": 27,
       "semester_taken": 1,
       "is_failed": false
     },
@@ -101,15 +108,20 @@
       "course_code": "BCSE102L",
       "course_name": "Structured and Object-Oriented Programming",
       "credits": 2,
-      "grade": "B+",
+      "grade": "B",
+      "grade_points": 8,
+      "credit_points": 16,
       "semester_taken": 1,
-      "is_failed": false
+      "is_failed": false,
+      "note": "Grade corrected from B+ to B"
     },
     {
       "course_code": "BCSE102P",
       "course_name": "Structured and Object-Oriented Programming Lab",
       "credits": 2,
       "grade": "A",
+      "grade_points": 9,
+      "credit_points": 18,
       "semester_taken": 1,
       "is_failed": false
     },
@@ -118,6 +130,8 @@
       "course_name": "Basic Electrical and Electronics Engineering",
       "credits": 3,
       "grade": "C",
+      "grade_points": 7,
+      "credit_points": 21,
       "semester_taken": 1,
       "is_failed": false
     },
@@ -126,6 +140,8 @@
       "course_name": "Basic Electrical and Electronics Engineering Lab",
       "credits": 1,
       "grade": "B",
+      "grade_points": 8,
+      "credit_points": 8,
       "semester_taken": 1,
       "is_failed": false
     },
@@ -133,15 +149,20 @@
       "course_code": "BENG101L",
       "course_name": "Technical English Communication",
       "credits": 2,
-      "grade": "B+",
+      "grade": "B",
+      "grade_points": 8,
+      "credit_points": 16,
       "semester_taken": 1,
-      "is_failed": false
+      "is_failed": false,
+      "note": "Grade corrected from B+ to B"
     },
     {
       "course_code": "BENG101P",
       "course_name": "Technical English Communication Lab",
       "credits": 1,
       "grade": "A",
+      "grade_points": 9,
+      "credit_points": 9,
       "semester_taken": 1,
       "is_failed": false
     },
@@ -150,6 +171,8 @@
       "course_name": "B.Tech. Foreign Language - 2021 onwards",
       "credits": 2,
       "grade": "B",
+      "grade_points": 8,
+      "credit_points": 16,
       "semester_taken": 1,
       "is_failed": false
     },
@@ -158,6 +181,8 @@
       "course_name": "Calculus",
       "credits": 3,
       "grade": "B",
+      "grade_points": 8,
+      "credit_points": 24,
       "semester_taken": 1,
       "is_failed": false
     },
@@ -165,15 +190,20 @@
       "course_code": "BMAT101P",
       "course_name": "Calculus Lab",
       "credits": 1,
-      "grade": "B+",
+      "grade": "B",
+      "grade_points": 8,
+      "credit_points": 8,
       "semester_taken": 1,
-      "is_failed": false
+      "is_failed": false,
+      "note": "Grade corrected from B+ to B"
     },
     {
       "course_code": "BPHY101L",
       "course_name": "Engineering Physics",
       "credits": 3,
       "grade": "C",
+      "grade_points": 7,
+      "credit_points": 21,
       "semester_taken": 1,
       "is_failed": false
     },
@@ -182,6 +212,8 @@
       "course_name": "Engineering Physics Lab",
       "credits": 1,
       "grade": "B",
+      "grade_points": 8,
+      "credit_points": 8,
       "semester_taken": 1,
       "is_failed": false
     },
@@ -190,6 +222,8 @@
       "course_name": "Quantitative Skills Practice I",
       "credits": 1,
       "grade": "S",
+      "grade_points": 10,
+      "credit_points": 10,
       "semester_taken": 1,
       "is_failed": false
     },
@@ -198,6 +232,8 @@
       "course_name": "Computer Programming: Java",
       "credits": 3,
       "grade": "A",
+      "grade_points": 9,
+      "credit_points": 27,
       "semester_taken": 2,
       "is_failed": false
     },
@@ -205,15 +241,20 @@
       "course_code": "BENG102P",
       "course_name": "Technical Report Writing",
       "credits": 1,
-      "grade": "B+",
+      "grade": "B",
+      "grade_points": 8,
+      "credit_points": 8,
       "semester_taken": 2,
-      "is_failed": false
+      "is_failed": false,
+      "note": "Grade corrected from B+ to B"
     },
     {
       "course_code": "BMAT102L",
       "course_name": "Differential Equations and Transforms",
       "credits": 4,
       "grade": "C",
+      "grade_points": 7,
+      "credit_points": 28,
       "semester_taken": 2,
       "is_failed": false
     },
@@ -222,6 +263,8 @@
       "course_name": "Quantitative Skills Practice II",
       "credits": 1,
       "grade": "S",
+      "grade_points": 10,
+      "credit_points": 10,
       "semester_taken": 2,
       "is_failed": false
     },
@@ -230,6 +273,8 @@
       "course_name": "Digital Systems Design",
       "credits": 3,
       "grade": "B",
+      "grade_points": 8,
+      "credit_points": 24,
       "semester_taken": 2,
       "is_failed": false
     },
@@ -237,23 +282,31 @@
       "course_code": "BECE102P",
       "course_name": "Digital Systems Design Lab",
       "credits": 1,
-      "grade": "B+",
+      "grade": "B",
+      "grade_points": 8,
+      "credit_points": 8,
       "semester_taken": 2,
-      "is_failed": false
+      "is_failed": false,
+      "note": "Grade corrected from B+ to B"
     },
     {
       "course_code": "BHSM200L",
       "course_name": "B.Tech. HSM Elective - 2021 onwards",
       "credits": 3,
-      "grade": "B+",
+      "grade": "B",
+      "grade_points": 8,
+      "credit_points": 24,
       "semester_taken": 2,
-      "is_failed": false
+      "is_failed": false,
+      "note": "Grade corrected from B+ to B"
     },
     {
       "course_code": "BMAT201L",
       "course_name": "Complex Variables and Linear Algebra",
       "credits": 4,
       "grade": "B",
+      "grade_points": 8,
+      "credit_points": 32,
       "semester_taken": 3,
       "is_failed": false
     },
@@ -261,15 +314,20 @@
       "course_code": "BCSE202L",
       "course_name": "Data Structures and Algorithms",
       "credits": 3,
-      "grade": "B+",
+      "grade": "B",
+      "grade_points": 8,
+      "credit_points": 24,
       "semester_taken": 3,
-      "is_failed": false
+      "is_failed": false,
+      "note": "Grade corrected from B+ to B"
     },
     {
       "course_code": "BCSE202P",
       "course_name": "Data Structures and Algorithms Lab",
       "credits": 1,
       "grade": "A",
+      "grade_points": 9,
+      "credit_points": 9,
       "semester_taken": 3,
       "is_failed": false
     },
@@ -277,15 +335,20 @@
       "course_code": "BCSE203E",
       "course_name": "Web Programming",
       "credits": 3,
-      "grade": "A+",
+      "grade": "A",
+      "grade_points": 9,
+      "credit_points": 27,
       "semester_taken": 3,
-      "is_failed": false
+      "is_failed": false,
+      "note": "Grade corrected from A+ to A"
     },
     {
       "course_code": "BMAT202L",
       "course_name": "Probability and Statistics",
       "credits": 3,
       "grade": "C",
+      "grade_points": 7,
+      "credit_points": 21,
       "semester_taken": 3,
       "is_failed": false
     },
@@ -294,6 +357,8 @@
       "course_name": "Probability and Statistics Lab",
       "credits": 1,
       "grade": "B",
+      "grade_points": 8,
+      "credit_points": 8,
       "semester_taken": 3,
       "is_failed": false
     },
@@ -302,6 +367,8 @@
       "course_name": "Qualitative Skills Practice I",
       "credits": 1,
       "grade": "S",
+      "grade_points": 10,
+      "credit_points": 10,
       "semester_taken": 3,
       "is_failed": false
     },
@@ -310,6 +377,8 @@
       "course_name": "Microprocessors and Microcontrollers",
       "credits": 3,
       "grade": "B",
+      "grade_points": 8,
+      "credit_points": 24,
       "semester_taken": 4,
       "is_failed": false
     },
@@ -317,15 +386,20 @@
       "course_code": "BECE204P",
       "course_name": "Microprocessors and Microcontrollers Lab",
       "credits": 1,
-      "grade": "B+",
+      "grade": "B",
+      "grade_points": 8,
+      "credit_points": 8,
       "semester_taken": 4,
-      "is_failed": false
+      "is_failed": false,
+      "note": "Grade corrected from B+ to B"
     },
     {
       "course_code": "BMAT205L",
       "course_name": "Discrete Mathematics and Graph Theory",
       "credits": 4,
       "grade": "B",
+      "grade_points": 8,
+      "credit_points": 32,
       "semester_taken": 4,
       "is_failed": false
     },
@@ -333,15 +407,20 @@
       "course_code": "BCSE204L",
       "course_name": "Design and Analysis of Algorithms",
       "credits": 3,
-      "grade": "B+",
+      "grade": "B",
+      "grade_points": 8,
+      "credit_points": 24,
       "semester_taken": 4,
-      "is_failed": false
+      "is_failed": false,
+      "note": "Grade corrected from B+ to B"
     },
     {
       "course_code": "BCSE204P",
       "course_name": "Design and Analysis of Algorithms Lab",
       "credits": 1,
       "grade": "A",
+      "grade_points": 9,
+      "credit_points": 9,
       "semester_taken": 4,
       "is_failed": false
     },
@@ -349,15 +428,20 @@
       "course_code": "BCSE205L",
       "course_name": "Computer Architecture and Organization",
       "credits": 3,
-      "grade": "B+",
+      "grade": "B",
+      "grade_points": 8,
+      "credit_points": 24,
       "semester_taken": 4,
-      "is_failed": false
+      "is_failed": false,
+      "note": "Grade corrected from B+ to B"
     },
     {
       "course_code": "BSTS202P",
       "course_name": "Qualitative Skills Practice II",
       "credits": 1,
       "grade": "S",
+      "grade_points": 10,
+      "credit_points": 10,
       "semester_taken": 4,
       "is_failed": false
     },
@@ -366,30 +450,41 @@
       "course_name": "Data Mining",
       "credits": 2,
       "grade": "F",
+      "grade_points": 0,
+      "credit_points": 0,
       "semester_taken": 4,
-      "is_failed": true
+      "is_failed": true,
+      "note": "Failed — must retake"
     },
     {
       "course_code": "BCSE208P",
       "course_name": "Data Mining Lab",
       "credits": 1,
       "grade": "F",
+      "grade_points": 0,
+      "credit_points": 0,
       "semester_taken": 4,
-      "is_failed": true
+      "is_failed": true,
+      "note": "Failed — must retake"
     },
     {
       "course_code": "BCSE301L",
       "course_name": "Software Engineering",
       "credits": 3,
-      "grade": "B+",
+      "grade": "B",
+      "grade_points": 8,
+      "credit_points": 24,
       "semester_taken": 5,
-      "is_failed": false
+      "is_failed": false,
+      "note": "Grade corrected from B+ to B"
     },
     {
       "course_code": "BCSE301P",
       "course_name": "Software Engineering Lab",
       "credits": 1,
       "grade": "A",
+      "grade_points": 9,
+      "credit_points": 9,
       "semester_taken": 5,
       "is_failed": false
     },
@@ -398,6 +493,8 @@
       "course_name": "Database Systems",
       "credits": 3,
       "grade": "A",
+      "grade_points": 9,
+      "credit_points": 27,
       "semester_taken": 5,
       "is_failed": false
     },
@@ -406,6 +503,8 @@
       "course_name": "Database Systems Lab",
       "credits": 1,
       "grade": "A",
+      "grade_points": 9,
+      "credit_points": 9,
       "semester_taken": 5,
       "is_failed": false
     },
@@ -414,6 +513,8 @@
       "course_name": "Operating Systems",
       "credits": 3,
       "grade": "B",
+      "grade_points": 8,
+      "credit_points": 24,
       "semester_taken": 5,
       "is_failed": false
     },
@@ -421,15 +522,20 @@
       "course_code": "BCSE303P",
       "course_name": "Operating Systems Lab",
       "credits": 1,
-      "grade": "B+",
+      "grade": "B",
+      "grade_points": 8,
+      "credit_points": 8,
       "semester_taken": 5,
-      "is_failed": false
+      "is_failed": false,
+      "note": "Grade corrected from B+ to B"
     },
     {
       "course_code": "BCSE304L",
       "course_name": "Theory of Computation",
       "credits": 3,
       "grade": "B",
+      "grade_points": 8,
+      "credit_points": 24,
       "semester_taken": 5,
       "is_failed": false
     },
@@ -438,6 +544,8 @@
       "course_name": "Embedded Systems",
       "credits": 3,
       "grade": "B",
+      "grade_points": 8,
+      "credit_points": 24,
       "semester_taken": 5,
       "is_failed": false
     },
@@ -445,15 +553,20 @@
       "course_code": "BCSE306L",
       "course_name": "Artificial Intelligence",
       "credits": 3,
-      "grade": "B+",
+      "grade": "B",
+      "grade_points": 8,
+      "credit_points": 24,
       "semester_taken": 5,
-      "is_failed": false
+      "is_failed": false,
+      "note": "Grade corrected from B+ to B"
     },
     {
       "course_code": "BCSE308L",
       "course_name": "Computer Networks",
       "credits": 3,
       "grade": "A",
+      "grade_points": 9,
+      "credit_points": 27,
       "semester_taken": 5,
       "is_failed": false
     },
@@ -462,6 +575,8 @@
       "course_name": "Computer Networks Lab",
       "credits": 1,
       "grade": "A",
+      "grade_points": 9,
+      "credit_points": 9,
       "semester_taken": 5,
       "is_failed": false
     },
@@ -470,30 +585,41 @@
       "course_name": "Introduction to Engineering",
       "credits": 1,
       "grade": "P",
+      "grade_points": 0,
+      "credit_points": 0,
       "semester_taken": 5,
-      "is_failed": false
+      "is_failed": false,
+      "note": "Non-credit pass/fail course — excluded from CGPA"
     },
     {
       "course_code": "BCHY102N",
       "course_name": "Environmental Sciences",
       "credits": 2,
       "grade": "P",
+      "grade_points": 0,
+      "credit_points": 0,
       "semester_taken": 5,
-      "is_failed": false
+      "is_failed": false,
+      "note": "Non-credit pass/fail course — excluded from CGPA"
     },
     {
       "course_code": "BSSC102N",
       "course_name": "Indian Constitution",
       "credits": 2,
       "grade": "P",
+      "grade_points": 0,
+      "credit_points": 0,
       "semester_taken": 5,
-      "is_failed": false
+      "is_failed": false,
+      "note": "Non-credit pass/fail course — excluded from CGPA"
     },
     {
       "course_code": "BCSE307L",
       "course_name": "Compiler Design",
       "credits": 3,
       "grade": "B",
+      "grade_points": 8,
+      "credit_points": 24,
       "semester_taken": 6,
       "is_failed": false
     },
@@ -501,23 +627,31 @@
       "course_code": "BCSE307P",
       "course_name": "Compiler Design Lab",
       "credits": 1,
-      "grade": "B+",
+      "grade": "B",
+      "grade_points": 8,
+      "credit_points": 8,
       "semester_taken": 6,
-      "is_failed": false
+      "is_failed": false,
+      "note": "Grade corrected from B+ to B"
     },
     {
       "course_code": "BCSE309L",
       "course_name": "Cryptography and Network Security",
       "credits": 3,
-      "grade": "B+",
+      "grade": "B",
+      "grade_points": 8,
+      "credit_points": 24,
       "semester_taken": 6,
-      "is_failed": false
+      "is_failed": false,
+      "note": "Grade corrected from B+ to B"
     },
     {
       "course_code": "BCSE309P",
       "course_name": "Cryptography and Network Security Lab",
       "credits": 1,
       "grade": "A",
+      "grade_points": 9,
+      "credit_points": 9,
       "semester_taken": 6,
       "is_failed": false
     },
@@ -525,37 +659,88 @@
       "course_code": "BCSE404L",
       "course_name": "Internet and Web Programming",
       "credits": 3,
-      "grade": "A+",
+      "grade": "A",
+      "grade_points": 9,
+      "credit_points": 27,
       "semester_taken": 6,
-      "is_failed": false
+      "is_failed": false,
+      "note": "Grade corrected from A+ to A"
     },
     {
       "course_code": "BCSE355L",
       "course_name": "AWS Solutions Architect",
       "credits": 3,
       "grade": "A",
+      "grade_points": 9,
+      "credit_points": 27,
       "semester_taken": 6,
       "is_failed": false
     }
   ],
-  
+
+  "semester_summary": [
+    {
+      "semester": 1,
+      "courses": 15,
+      "credits": 29,
+      "credit_points": 234,
+      "sgpa": 8.07
+    },
+    {
+      "semester": 2,
+      "courses": 7,
+      "credits": 16,
+      "credit_points": 129,
+      "sgpa": 8.06
+    },
+    {
+      "semester": 3,
+      "courses": 8,
+      "credits": 16,
+      "credit_points": 131,
+      "sgpa": 8.19
+    },
+    {
+      "semester": 4,
+      "courses": 10,
+      "credits": 19,
+      "credit_points": 131,
+      "sgpa": 6.89
+    },
+    {
+      "semester": 5,
+      "courses": 12,
+      "credits": 25,
+      "credit_points": 209,
+      "sgpa": 8.36
+    },
+    {
+      "semester": 6,
+      "courses": 6,
+      "credits": 14,
+      "credit_points": 119,
+      "sgpa": 8.50
+    }
+  ],
+
   "interest_areas": [
     "Web Development",
     "Cloud Computing",
     "DevOps"
   ],
-  
+
   "preferred_credits_per_semester": 20,
   "max_credits_per_semester": 24,
   "preferred_difficulty_level": "moderate",
-  
+
   "has_backlogs": true,
   "avoid_courses": ["BCSE209L", "BCSE332L"],
-  
+
   "past_performance_trend": "improving",
-  
+
   "risk_tolerance": "low",
   "workload_preference": "medium",
+  "difficulty_preference": "medium",
   "prioritize_gpa": false,
   "prioritize_learning": true
 }
