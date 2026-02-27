@@ -756,7 +756,7 @@ with tab5:
     loader    = st.session_state.loader
     planner   = st.session_state.planner
 
-    st.markdown("### Select a Plan to Explore")
+    st.markdown("### Select a Plan to Explore - Select a plan here to view it in customization tab")
     plan_types = list(all_plans.keys())
     cols = st.columns(len(plan_types))
 
